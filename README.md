@@ -8,6 +8,8 @@ Projects are independent: each experiment owns its source, dependencies, lockfil
 
 Visit [opencartel.tech](https://opencartel.tech/) or open [Words Have Weight](https://opencartel.tech/words-have-weight/), a typography playground where words become physical objects. Its [source and setup instructions](projects/words-have-weight/) are included in this repository.
 
+Try [Paper Shredder](https://opencartel.tech/paper-shredder/), an interactive office with local document previews, shredding and playful room interactions. Its [source and setup instructions](projects/paper-shredder/) include the exported 3D scene.
+
 Browse the [project directory](projects/) for individual setup, reuse instructions, and asset credits.
 
 ## Use a project with your agent

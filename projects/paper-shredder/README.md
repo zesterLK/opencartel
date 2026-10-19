@@ -66,7 +66,7 @@ node scripts/source-archive.mjs --verify
 npm run build
 ```
 
-The manifest identifies source bytes, not a signature or a release. Local verification on 20 October 2026 covered 17 automated tests, typechecking, production bundling, desktop and 390 × 844 browser layouts, reduced-motion steps, actual PDF/image/text/cover previews, a locked-PDF error, and a 34-sheet run beyond the fill estimate. An independent visual review inspected the rendered office and dialogs. Actual iOS/Android hardware and Safari were not tested; the browser checks do not establish performance on those devices. No public deployment is included.
+The manifest identifies source bytes, not a signature or a release. Local verification on 20 October 2026 covered 17 automated tests, typechecking, production bundling, desktop and 390 × 844 browser layouts, reduced-motion steps, actual PDF/image/text/cover previews, a locked-PDF error, and a 34-sheet run beyond the fill estimate. An independent visual review inspected the rendered office and dialogs. Actual iOS/Android hardware and Safari were not tested; the browser checks do not establish performance on those devices. The [public experiment](https://opencartel.tech/paper-shredder/) was deployed and checked on 20 October 2026.
 
 ## License
 
