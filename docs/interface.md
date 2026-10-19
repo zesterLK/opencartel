@@ -14,11 +14,11 @@ Import these styles after the page styles. Project-specific layout remains in th
 
 `site/src/cursor.js` exports `mountCursor()`, which returns cleanup. Import `cursor.css`, mount once, and register cleanup with the development runtime when available. The pointer is restricted to fine-pointer, hover-capable devices; text fields, native selection controls, forced colors and touch keep native behavior.
 
-Ordinary links and buttons receive the action ring. Use `data-cursor="project"` for collection cards and `data-cursor="grab"` for draggable surfaces. The cursor tracks dragging, keyboard modality and native dialog layers. It does not trail behind the pointer.
+Ordinary links and buttons receive the action ring and a small “click it” hint. Use `data-cursor="project"` for collection cards and `data-cursor="grab"` for draggable surfaces. Project, download, disclosure and drag targets have contextual hints. Add `data-cursor-label="read guide"` for a specific short hint; an empty value suppresses it. Hints flip at viewport edges and never receive pointer events. Keep native accessible names: these visual hints do not replace them. The cursor tracks dragging, keyboard modality and native dialog layers. It does not trail behind the pointer. Use `data-cursor="native"` on selectable source panels to retain the text-selection cursor.
 
 ## Standalone projects
 
-Words Have Weight includes byte-identical copies of `ui.css`, `cursor.css`, `cursor.js`, `motion.js` and `motion.css` in its own `src/`. Copy updates from the canonical site files into existing standalone projects and verify equality before packaging. TypeScript projects may use the accompanying `cursor.d.ts` declaration. Include the required font and its license inside the project's public assets.
+Words Have Weight includes byte-identical copies of `ui.css`, `cursor.css`, `cursor.js`, `motion.js`, `motion.css`, `markdown-panel.js` and `markdown-panel.css` in its own `src/`. Copy updates from the canonical site files into existing standalone projects and verify equality before packaging. TypeScript projects may use the accompanying `cursor.d.ts` declaration. Include the required font and its license inside the project's public assets.
 
 These deliberate copies keep a downloaded project independent: no imports from the catalog, root-only runtime dependency, shared global install or network font is required. The source archive must include these files.
 
@@ -38,4 +38,12 @@ In an embedded experience, let the host router own page transitions; omit the gl
 
 ## Project masthead
 
-In collection mode, place an icon-only Home link to the left of the static pressed project title. Keep its accessible name `Home` and a 44px phone target. Download source and Help belong in the header action group. Standalone downloads hide Home when there is no parent collection. Help offers Copy guide and Download guide, both from the project's canonical `INTEGRATE.md`.
+In collection mode, place an icon-only Home link to the left of the static pressed project title. Keep its accessible name `Home`; collection controls use compact 36px phone surfaces with spacing between targets. Help, Guide and Download source belong in the header action group. Standalone downloads hide Home when there is no parent collection. Guide opens its own native dialog with the project's canonical `INTEGRATE.md` in a copyable Markdown source panel. Help contains a native Third-party notices disclosure using that same panel. Do not add separate guide-copy or guide-download actions outside the panel.
+
+## Copyable Markdown panels
+
+`site/src/markdown-panel.js` exports `mountMarkdownPanel(element, { url, filename, validate })`. Import `markdown-panel.css` alongside the control styles. Call the returned `load()` when its dialog or disclosure opens, and `dispose()` on teardown. Requests are cached per mounted panel after success; failures offer a retry.
+
+The panel shows the original Markdown or plain-text source in a wrapping, scrollable monospace region. It does not render HTML or execute embedded content. Copy writes the complete source unchanged, including content outside the visible scroll area. If clipboard access fails, the panel selects the text and explains how to copy manually. Loading, copied and failure states have accessible feedback. Supply a content validator for fetched documents to reject an unexpected HTML error response.
+
+Use this project-owned primitive for guides, notices and other copyable source documents. Keep one filename and one Copy control in its header, with no redundant download action. Preserve legal notices in full. This is not a cross-project or cross-brand UI package.

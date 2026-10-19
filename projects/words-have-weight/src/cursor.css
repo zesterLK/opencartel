@@ -57,13 +57,35 @@
 .oc-cursor.is-pressed:not([data-mode='dragging']) .oc-cursor__ring { transform: translate(-50%, -50%) scale(.78); }
 .oc-cursor.is-pressed:not([data-mode='dragging']) .oc-cursor__point { transform: translate(-50%, -50%) scale(.55); }
 
+.oc-cursor__label {
+  position: absolute;
+  display: block;
+  width: max-content;
+  max-width: min(240px, calc(100vw - 20px));
+  padding: 5px 9px 6px;
+  overflow: hidden;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  background: #ffffffed;
+  color: #242424;
+  box-shadow: 0 2px 4px #00000012;
+  font: 12px/1.15 Chakra, Arial, sans-serif;
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  opacity: 0;
+  transform: translateY(2px);
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+.oc-cursor.has-label .oc-cursor__label { opacity: 1; transform: translateY(0); }
+
 html.oc-cursor-active,
 html.oc-cursor-active * { cursor: none !important; }
 html.oc-cursor-active dialog::backdrop,
 html.oc-cursor-active [popover]::backdrop { cursor: none !important; }
 
 @media (prefers-reduced-motion: reduce) {
-  .oc-cursor__point, .oc-cursor__ring { transition: none; }
+  .oc-cursor__point, .oc-cursor__ring, .oc-cursor__label { transition: none; }
 }
 @media (hover: none), (pointer: coarse), (forced-colors: active) {
   .oc-cursor { display: none !important; }

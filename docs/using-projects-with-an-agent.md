@@ -5,7 +5,7 @@ Each project is a working implementation, with its own dependencies, assets and 
 ## Download, run, then adapt
 
 1. Download **Source** from the experiment, or copy its complete `projects/<slug>/` folder from this repository. Keep a separate unchanged copy as your reference.
-2. Give your agent that folder and its **`INTEGRATE.md`**. The experiment's Help dialog also offers the same guide to copy or download as Markdown. A guide alone is not the implementation; provide the source too.
+2. Give your agent that folder and its **`INTEGRATE.md`**. The experiment's Guide button opens the same Markdown with a Copy control. A guide alone is not the implementation; provide the source too.
 3. Follow the project's `README.md` to install its locked dependencies and run it independently. Compare the original in the browser before changing it.
 4. Specify whether you want the complete experience, an embedded section, or one effect, and point to the destination repository and component/page. Describe the changes you actually want.
 5. Ask the agent to preserve the rendering, motion, assets and accessible interactions, then verify the adapted result against the unchanged reference.

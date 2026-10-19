@@ -1,6 +1,6 @@
 # Integrate Words Have Weight
 
-This is the source of the OpenCartel typography playground: six behaviours driven by real font outlines, pointer input and a bounded spring simulation. Use the included implementation as the starting point. This guide is also available to copy or download from the running project's Help dialog.
+This is the source of the OpenCartel typography playground: six behaviours driven by real font outlines, pointer input and a bounded spring simulation. Use the included implementation as the starting point. The running project's Guide button opens this complete Markdown source with a Copy control.
 
 ## Establish the original first
 
@@ -38,13 +38,14 @@ The project does not export a React/Vue component or a ready-made mount API. `sr
 
 | File | Responsibility |
 | --- | --- |
-| `index.html` | Stage SVG, required IDs, input, six mode controls, reset, header and Help dialog. |
+| `index.html` | Stage SVG, required IDs, input, six mode controls, reset, header, Help and Guide dialogs. |
 | `src/main.ts` | Loads/parses the font, caches glyph outlines, sizes the stage, renders SVG, handles input/drag/keyboard, selects modes and schedules animation. |
 | `src/geometry.ts` | `MODES`, `SPRINGS`, bounded stepping, contact curves, order constraints, grapheme validation and frame subdivision. |
-| `src/style.css` | Experience composition, canvas, form, responsive controls and Help styling. |
+| `src/style.css` | Experience composition, canvas, form, responsive controls and dialog styling. |
 | `src/ui.css` | Raised controls and the static pressed title surface. |
-| `src/cursor.js`, `src/cursor.css` | Optional fine-pointer cursor, native text/touch fallback and modal handling. `mountCursor()` returns cleanup. |
+| `src/cursor.js`, `src/cursor.css` | Optional fine-pointer cursor with contextual labels, native text/touch fallback and modal handling. `mountCursor()` returns cleanup. |
 | `src/motion.js`, `src/motion.css` | Reduced-motion-aware page fades and native-dialog transitions. `mountPageMotion()` returns cleanup; `openDialog()` and `closeDialog()` animate native dialogs. |
+| `src/markdown-panel.js`, `src/markdown-panel.css` | Reusable source-text panel with lazy loading, verbatim copying, retry and selection fallback. `mountMarkdownPanel()` returns `load()` and `dispose()`. |
 | `public/fonts/` | Archivo Black outline font, Chakra Petch interface font and both OFL notices. |
 | `tests/geometry.test.ts` | Simulation and input invariants; run with `npm test`. |
 | `scripts/source-archive.mjs` | Creates the standalone source ZIP, direct guide copy and source manifest; also verifies a downloaded manifest. |
@@ -82,10 +83,10 @@ All fonts are local. Keep `LICENSE`, `ATTRIBUTION.md`, `public/fonts/OFL.txt` an
 
 1. Run type checking, the geometry tests and the production build.
 2. Compare the default heavy scene with the original: font shape, word scale, ink contact, line sag and spacing.
-3. Exercise all retained modes, real drag/release, custom words, mode switching and Reset. Check keyboard arrows/Shift/Space/Escape, tab order and Help focus return.
+3. Exercise all retained modes, real drag/release, custom words, mode switching and Reset. Check keyboard arrows/Shift/Space/Escape, tab order and Help/Guide focus return. Expand third-party notices and verify both panels copy their complete original text.
 4. Check a phone-width view and desktop, including a short viewport. Verify no clipped controls or horizontal overflow.
 5. Enable reduced motion; try Hindi/emoji and a failed font request. Confirm meaningful fallback rather than missing text.
-6. Load the production route directly and reload it. Verify fonts, scripts, source/guide downloads and links under its final base path.
+6. Load the production route directly and reload it. Verify fonts, scripts, source downloads, guide/notices loading and copying, and links under its final base path.
 7. If embedding, mount/unmount more than once and check that listeners, cursor elements and animation loops do not accumulate.
 
 The spring model is expressive typography, not a general collision or soft-body engine. Browser text deliberately uses simpler whole-word motion. Record intentional differences and any browsers/devices you did not verify.

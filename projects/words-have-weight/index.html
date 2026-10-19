@@ -12,18 +12,19 @@
   <main class="experience">
     <header class="masthead">
       <div class="masthead-brand">
-        <a id="origin-link" class="origin-link oc-button" aria-label="Home" title="Home" hidden>
+        <a id="origin-link" class="origin-link oc-button" aria-label="Home" title="Home" data-cursor-label="go home" hidden>
           <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z" /></svg>
         </a>
         <h1 class="oc-pressed">Words have weight</h1>
       </div>
       <div class="masthead-actions">
-        <button id="info-button" class="text-button oc-button" aria-haspopup="dialog" aria-controls="info-dialog">Help</button>
-        <a id="source-download" class="oc-button" download="words-have-weight-source.zip">Download source</a>
+        <button id="info-button" class="text-button oc-button" aria-haspopup="dialog" aria-controls="info-dialog" data-cursor-label="get help">Help</button>
+        <button id="guide-button" class="oc-button" aria-haspopup="dialog" aria-controls="guide-dialog" data-cursor-label="read guide">Guide</button>
+        <a id="source-download" class="oc-button" download="words-have-weight-source.zip" data-cursor-label="download source">Download source</a>
       </div>
     </header>
     <section class="playground" aria-label="Interactive typography">
-      <svg id="stage" viewBox="0 0 1400 700" role="group" tabindex="0" aria-label="Word playground" aria-describedby="stage-help" xmlns="http://www.w3.org/2000/svg">
+      <svg id="stage" viewBox="0 0 1400 700" role="group" tabindex="0" aria-label="Word playground" aria-describedby="stage-help" data-cursor-label="lift" xmlns="http://www.w3.org/2000/svg">
         <title id="scene-title">heavy — heavy behaviour</title>
         <desc>Drag a letter to feel its weight. Use the controls below to change the word and its behaviour.</desc>
         <path id="ghost-line" class="ghost-line" />
@@ -66,15 +67,15 @@
     </dl>
     <p class="keyboard-guide"><strong>Keyboard</strong> · Focus the canvas. Arrows move; Shift moves further. Space lifts or releases. Escape lets go.</p>
     <p class="support-note">Up to 16 characters. Other scripts and emoji use browser text with simpler motion.</p>
-    <div class="dialog-footer">
-      <p>Run or adapt this project with your agent.</p>
-      <div class="guide-actions">
-        <button id="copy-agent-guide" class="oc-button" type="button">Copy guide</button>
-        <a class="oc-button" data-agent-guide href="./integrate.md" download="words-have-weight-integration.md">Download guide</a>
-      </div>
-      <p id="guide-feedback" role="status"></p>
-      <p><a href="./licenses/THIRD-PARTY-NOTICES.txt" download="words-have-weight-third-party-notices.txt">Third-party notices</a></p>
-    </div>
+    <details class="notices-disclosure" id="third-party-notices">
+      <summary>Third-party notices<svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg></summary>
+      <div id="notices-panel"></div>
+    </details>
+  </dialog>
+  <dialog id="guide-dialog" class="guide-dialog" aria-labelledby="guide-title">
+    <div class="dialog-header"><h2 id="guide-title">Use this project</h2><button id="close-guide" class="close-button oc-button" aria-label="Close guide">Close</button></div>
+    <p class="guide-intro">The guide for you and your agent.</p>
+    <div id="guide-panel"></div>
   </dialog>
   <script type="module" src="/src/main.ts"></script>
 </body>

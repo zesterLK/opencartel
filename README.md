@@ -12,7 +12,7 @@ Browse the [project directory](projects/) for individual setup, reuse instructio
 
 ## Use a project with your agent
 
-Download the source, keep an unchanged copy, and give your agent the complete folder plus its `INTEGRATE.md`. Run the original first, then specify whether you want the whole experience, an embedded section or one effect, and name the destination page. The guide identifies the rendering, motion, assets and accessible interactions to preserve. Each experiment also offers the guide to copy or download as Markdown in Help.
+Download the source, keep an unchanged copy, and give your agent the complete folder plus its `INTEGRATE.md`. Run the original first, then specify whether you want the whole experience, an embedded section or one effect, and name the destination page. The guide identifies the rendering, motion, assets and accessible interactions to preserve. Each experiment has a Guide button that opens its complete Markdown instructions with a Copy control.
 
 Start with [Words Have Weight’s integration guide](projects/words-have-weight/INTEGRATE.md), or use the [general copy-and-paste agent brief](docs/using-projects-with-an-agent.md).
 

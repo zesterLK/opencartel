@@ -43,7 +43,7 @@ Tab to the canvas and use arrow keys to move the middle letter. Shift increases 
 
 ## Use it with your agent
 
-Give your agent this complete folder and [INTEGRATE.md](INTEGRATE.md), then specify the destination and whether you want the full page, an embed or one behaviour. The guide contains an implementation map, fidelity requirements, integration checks and a ready-to-copy brief. Run an unchanged copy first; the guide alone is not a replacement for the source. The same guide can be copied or downloaded directly in Help.
+Give your agent this complete folder and [INTEGRATE.md](INTEGRATE.md), then specify the destination and whether you want the full page, an embed or one behaviour. The guide contains an implementation map, fidelity requirements, integration checks and a ready-to-copy brief. Run an unchanged copy first; the guide alone is not a replacement for the source. The header’s Guide button opens the complete Markdown source in a copyable panel.
 
 ## Reuse the implementation
 
@@ -51,7 +51,7 @@ Give your agent this complete folder and [INTEGRATE.md](INTEGRATE.md), then spec
 
 The renderer uses SVG paths from opentype.js. Each glyph is positioned using its ink bounds, so descenders rest against the contact line. The physics is a small spring model; this is expressive typography, not a general collision or soft-body simulation. Melt is a bounded deformation of Bézier control points. Complex-script shaping and emoji are intentionally delegated to browser text rather than split into incorrect glyphs.
 
-`npm run source` creates `public/words-have-weight-source.zip`, including source, tests, setup files, fonts, licenses and `INTEGRATE.md`. It also creates `public/integrate.md` for the direct guide download. `predev` and `prebuild` run it automatically. Download source is available beside Help in the header. Generated files are rebuilt from their canonical source.
+`npm run source` creates `public/words-have-weight-source.zip`, including source, tests, setup files, fonts, licenses and `INTEGRATE.md`. It also creates `public/integrate.md` for the Guide panel. `predev` and `prebuild` run it automatically. Help, Guide and Download source are available in the header. Third-party notices expand inside Help with their own Copy control. Generated files are rebuilt from their canonical source.
 
 Each ZIP contains a deterministic `SOURCE-MANIFEST.json` with the SHA-256 and byte count of its source files. After extracting and running `npm ci`, use `node scripts/source-archive.mjs --verify` before editing to check that snapshot. The generated manifest is present in a download, not required in a repository copy. Dependencies and build output are intentionally omitted; `npm ci` and `npm run build` recreate them. A previously downloaded ZIP stays at its captured revision.
 

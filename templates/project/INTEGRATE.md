@@ -1,6 +1,6 @@
 # Integrate Project title
 
-Replace this template with a guide specific to the implementation before marking the project ready. Keep this file at the project root and include it in every source ZIP. Offer the same content as a direct Markdown download from the project's Help or source interface.
+Replace this template with a guide specific to the implementation before marking the project ready. Keep this file at the project root and include it in every source ZIP. Offer the same content in a copyable Markdown panel opened by the project's Guide button.
 
 ## Run the original
 

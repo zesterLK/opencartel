@@ -6,6 +6,8 @@ import './cursor.css';
 import { mountCursor } from './cursor.js';
 import './motion.css';
 import { mountPageMotion, openDialog, closeDialog } from './motion.js';
+import './markdown-panel.css';
+import { mountMarkdownPanel } from './markdown-panel.js';
 import { MODES, SPRINGS, clamp, contactPath, createNodes, curveY, frameSteps, keepLetterOrder, stepNodes, validateWord } from './geometry.ts';
 import type { Mode, Point, SpringNode } from './geometry.ts';
 
@@ -380,6 +382,7 @@ function selectMode(next: Mode, announceChange = true): void {
   Object.assign(fallbackNode, { x: 0, y: 0, vx: 0, vy: 0 });
   for (const button of document.querySelectorAll<HTMLButtonElement>('[data-mode]')) button.setAttribute('aria-pressed', String(button.dataset.mode === mode));
   help.textContent = `${helpText[mode]}${stage.matches(':focus-visible') ? ' Arrow keys to move; Space to release.' : ''}`;
+  stage.dataset.cursorLabel = ({ heavy: 'lift', stretch: 'pull sideways', balance: 'move weight', whisper: 'move closer', melt: 'pull down', bounce: 'lift and release' })[mode];
   stage.setAttribute('aria-label', `${word}. ${mode} behaviour. Interactive word playground.`);
   $('#scene-title').textContent = `${word} — ${mode} behaviour`;
   if (mode === 'bounce' && !reducedMotion.matches) nodes.forEach((node, i) => { node.vy = -170 - i * 22; });
@@ -414,30 +417,32 @@ $('#reset-button').addEventListener('click', () => {
   announce('Reset. heavy, with heavy behaviour.');
 });
 
-$('#info-button').addEventListener('click', () => { release(false); openDialog(dialog); });
-$('#close-info').addEventListener('click', () => closeDialog(dialog));
-dialog.addEventListener('cancel', event => { event.preventDefault(); closeDialog(dialog); });
-dialog.addEventListener('close', () => $<HTMLButtonElement>('#info-button').focus());
-dialog.addEventListener('click', event => { if (event.target === dialog) { const r = dialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) closeDialog(dialog); } });
-const composed = import.meta.env.VITE_OPENCARTEL_COMPOSED === '1';
-const guideLink = $<HTMLAnchorElement>('[data-agent-guide]');
-guideLink.href = `${import.meta.env.BASE_URL}integrate.md`;
-const copyGuide = $<HTMLButtonElement>('#copy-agent-guide');
-copyGuide.addEventListener('click', async () => {
-  const feedback = $<HTMLParagraphElement>('#guide-feedback');
-  copyGuide.disabled = true;
-  feedback.textContent = '';
-  try {
-    const response = await fetch(guideLink.href);
-    if (!response.ok) throw new Error('Guide unavailable');
-    const text = await response.text();
-    if (!text.startsWith('# Integrate Words Have Weight')) throw new Error('Unexpected guide');
-    await navigator.clipboard.writeText(text);
-    feedback.textContent = 'Guide copied.';
-  } catch {
-    feedback.textContent = 'Could not copy. Use Download guide instead.';
-  } finally { copyGuide.disabled = false; }
+function bindDialog(target: HTMLDialogElement, trigger: string, close: string, onOpen = () => {}): void {
+  $(trigger).addEventListener('click', () => { release(false); openDialog(target); onOpen(); });
+  $(close).addEventListener('click', () => closeDialog(target));
+  target.addEventListener('cancel', event => { event.preventDefault(); closeDialog(target); });
+  target.addEventListener('close', () => $<HTMLButtonElement>(trigger).focus());
+  target.addEventListener('click', event => {
+    if (event.target !== target) return;
+    const r = target.getBoundingClientRect();
+    if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) closeDialog(target);
+  });
+}
+bindDialog(dialog, '#info-button', '#close-info');
+const guidePanel = mountMarkdownPanel($<HTMLElement>('#guide-panel'), {
+  url: `${import.meta.env.BASE_URL}integrate.md`, filename: 'INTEGRATE.md',
+  validate: text => text.startsWith('# Integrate Words Have Weight'),
 });
+const noticesPanel = mountMarkdownPanel($<HTMLElement>('#notices-panel'), {
+  url: `${import.meta.env.BASE_URL}licenses/THIRD-PARTY-NOTICES.txt`, filename: 'THIRD-PARTY-NOTICES.txt',
+  validate: text => text.startsWith('Words Have Weight — third-party runtime notices'),
+});
+bindDialog($<HTMLDialogElement>('#guide-dialog'), '#guide-button', '#close-guide', () => { void guidePanel.load(); });
+$('#third-party-notices').addEventListener('toggle', event => {
+  if ((event.currentTarget as HTMLDetailsElement).open) void noticesPanel.load();
+});
+import.meta.hot?.dispose(() => { guidePanel.dispose(); noticesPanel.dispose(); });
+const composed = import.meta.env.VITE_OPENCARTEL_COMPOSED === '1';
 const sourceLink = $<HTMLAnchorElement>('#source-download');
 sourceLink.href = composed ? '/downloads/words-have-weight.zip' : `${import.meta.env.BASE_URL}words-have-weight-source.zip`;
 if (composed) { const origin = $<HTMLAnchorElement>('#origin-link'); origin.href = '/'; origin.hidden = false; }

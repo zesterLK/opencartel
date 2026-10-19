@@ -54,7 +54,7 @@ Development ZIP responses are rebuilt from current source on request. Production
 
 ## Agent handoff guide
 
-Every project includes a completed `INTEGRATE.md` at its root, in its ZIP and as a direct Markdown download from Help or its source interface. Keep one canonical source: generate the served copy during source preparation/build. For Words Have Weight that copy is `public/integrate.md`; it is excluded from the ZIP because the canonical root guide is already included.
+Every project includes a completed `INTEGRATE.md` at its root, in its ZIP and in a copyable Markdown panel opened by the header's Guide button. Keep one canonical source: generate the served copy during source preparation/build. For Words Have Weight that copy is `public/integrate.md`; it is excluded from the ZIP because the canonical root guide is already included. Third-party notices expand within Help using the same source panel. See [interface controls](interface.md) for the component and its standalone copies.
 
 The guide must name the actual entry points, renderer, motion/state/physics, assets, dependencies and accessibility behaviour. Explain how to run the original first, the supported reuse scopes, framework/lifecycle boundaries, deliberate customization points and verification against an unchanged reference. Include a copyable agent brief with destination and scope placeholders. Document missing APIs and known limits; do not promise a drop-in component when the code is a standalone page controller. See [using projects with an agent](using-projects-with-an-agent.md) and the template guide.
 

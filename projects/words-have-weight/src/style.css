@@ -57,11 +57,17 @@ dialog p{font-size:13px;line-height:1.65;color:#62645f}
 .keyboard-guide{margin:20px 0 0;font-size:12px}
 .keyboard-guide strong{color:#111;font-weight:500}
 .support-note{font-size:12px}
-.dialog-footer{border-top:1px solid #e5e6e2;margin-top:22px;padding-top:18px;font-size:13px}
-.dialog-footer .oc-button{flex-shrink:0}
-.dialog-footer p{margin:0;font-size:12px;line-height:1.5}
-.guide-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-.dialog-footer #guide-feedback:not(:empty){margin-top:12px}
+.guide-dialog{width:min(800px,calc(100% - 36px))}
+.guide-intro{margin:16px 0 22px}
+.notices-disclosure{border-top:1px solid #e5e6e2;margin-top:22px;padding-top:4px}
+.notices-disclosure summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0 12px;font:12px/1.5 Chakra,Arial,sans-serif;cursor:pointer;list-style:none;color:#62645f}
+.notices-disclosure summary::-webkit-details-marker{display:none}
+.notices-disclosure summary:focus-visible{outline:1px solid #777;outline-offset:3px}
+.notices-disclosure summary svg{flex-shrink:0;transition:transform .18s}
+.notices-disclosure[open] summary svg{transform:rotate(180deg)}
+.notices-disclosure[open] .oc-markdown-panel{animation:panel-arrival .18s ease-out}
+.notices-disclosure .oc-markdown-content{max-height:36dvh}
+@keyframes panel-arrival{from{opacity:0}to{opacity:1}}
 
 @media(min-width:1700px){.masthead{padding:0 40px}.controls{gap:36px}.mode-controls{gap:12px}}
 @media(max-width:1000px){.controls{gap:18px;padding-left:24px;padding-right:24px}.mode-controls{gap:7px}.mode-controls .oc-button{min-width:54px;padding-inline:8px}.word-form{width:160px}}
@@ -86,19 +92,25 @@ dialog p{font-size:13px;line-height:1.65;color:#62645f}
   .mode-guide>div{padding:8px 0}
   .support-note{font-size:11px}
 }
-@media(max-width:519px){
-  .experience{grid-template-rows:120px minmax(0,1fr) 154px}
+@media(max-width:700px){
+  .experience{grid-template-rows:108px minmax(0,1fr) 154px}
   .masthead{flex-wrap:wrap;align-content:center;justify-content:space-between;gap:8px;padding-block:12px}
-  .masthead h1{font-size:15px;flex-basis:auto}
-  .masthead-actions{flex-basis:100%;gap:10px}
+  .masthead h1{font-size:13px;flex-basis:auto;min-height:36px}
+  .masthead-brand{gap:10px}
+  .origin-link.oc-button{width:36px;height:36px;min-height:36px}
+  .origin-link svg{width:17px;height:17px}
+  .masthead-actions{flex-basis:100%;gap:8px}
+  .mode-controls .oc-button{min-height:36px}
+  dialog{padding:18px;width:calc(100% - 24px);max-height:calc(100dvh - 24px)}
+  .dialog-header h2{font-size:20px}
 }
 @media(max-width:399px){
-  .experience{grid-template-rows:120px minmax(0,1fr) 204px;min-height:560px}
+  .experience{grid-template-rows:108px minmax(0,1fr) 184px;min-height:540px}
   .masthead{padding-inline:16px}
-  .controls{padding-left:16px;padding-right:16px;grid-template-rows:44px 98px;gap:18px 14px}
+  .controls{padding-left:16px;padding-right:16px;grid-template-rows:44px 82px;gap:18px 14px}
   .mode-controls{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-  .mode-controls .oc-button{font-size:13px;min-height:44px}
+  .mode-controls .oc-button{font-size:12px;min-height:36px}
   .word-message{width:calc(100% + 82px)}
 }
 @media(max-height:600px) and (min-width:761px){.experience{grid-template-rows:70px minmax(0,1fr) 104px;min-height:360px}.controls{padding-bottom:20px}.stage-help{bottom:0}}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important;animation:none!important}}
