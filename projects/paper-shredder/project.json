@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "slug": "paper-shredder",
+  "title": "Paper Shredder",
+  "description": "Shred local documents in an illustrated office. Explore the room, queue more paper and control the pace.",
+  "status": "ready",
+  "technologies": [
+    "Three.js",
+    "TypeScript",
+    "Blender",
+    "PDF.js",
+    "Vite"
+  ],
+  "codeLicense": "MIT",
+  "demo": null
+}

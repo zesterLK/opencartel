@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#e6e2db" />
+  <meta name="description" content="One last task in a quiet office. Press the amber button and watch a printed page become paper ribbons." />
+  <title>Paper Shredder</title>
+  <link rel="icon" href="data:," />
+</head>
+<body>
+  <main class="experience">
+    <header class="masthead">
+      <div class="masthead-brand">
+        <a id="origin-link" class="origin-link oc-button" aria-label="Home" title="Home" data-cursor-label="go home" hidden>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z" /></svg>
+        </a>
+        <h1 class="oc-pressed">Paper Shredder</h1>
+      </div>
+      <div class="masthead-actions">
+        <button id="info-button" class="oc-button" aria-haspopup="dialog" aria-controls="info-dialog" data-cursor-label="get help">Help</button>
+        <button id="guide-button" class="oc-button" aria-haspopup="dialog" aria-controls="guide-dialog" data-cursor-label="read guide">Guide</button>
+        <a id="source-download" class="oc-button" download="paper-shredder-source.zip" data-cursor-label="download source">Download source</a>
+      </div>
+    </header>
+    <section id="room" class="room" aria-label="Office after hours" aria-describedby="scene-description">
+      <canvas id="scene" aria-hidden="true"></canvas>
+      <p id="scene-description" class="sr-only">A furnished office at dusk. A charcoal paper shredder stands in the middle, with a white sheet in its top slot, an amber button on its shoulder and a visible waste bin. Activate the shredder button to feed the sheet through the enclosed cutting head.</p>
+      <button id="shred-button" class="machine-button" type="button" aria-label="Shred the sheet" aria-describedby="scene-status" data-cursor-label="shred it" hidden disabled><span class="sr-only">Shred the sheet</span></button>
+      <div id="load-state" class="load-state" role="status">
+        <span class="loading-dot" aria-hidden="true"></span>
+        <p id="load-message">Opening the office…</p>
+        <button id="retry-button" class="oc-button" type="button" hidden>Try again</button>
+      </div>
+      <noscript><p class="noscript-message">This interactive room needs JavaScript. The source download includes the editable Three.js project.</p></noscript>
+    </section>
+    <footer class="controls">
+      <div class="control-summary">
+        <div class="scene-state"><span id="status-dot" class="status-dot" aria-hidden="true"></span><p id="scene-status">Opening the office…</p></div>
+        <span id="active-page" class="active-page">One last sheet</span>
+        <div class="bin-meter"><label for="bin-fill">Bin <span id="bin-percent">0%</span></label><progress id="bin-fill" max="1" value="0"></progress><span id="bin-count">0 sheets</span></div>
+      </div>
+      <div class="control-actions">
+        <label class="compact-select"><span>Look around</span><select id="office-view"><option value="room">Shredder</option><option value="desk">Desk &amp; lamp</option><option value="notes">Pinned notes</option><option value="drawer">Top drawer</option><option value="window">Moonlit window</option></select></label>
+        <button id="upload-button" class="oc-button" aria-haspopup="dialog" aria-controls="upload-dialog" data-cursor-label="add a local file">Upload file</button>
+        <label class="compact-select"><span>Speed</span><select id="feed-speed"><option value="0.5">Slow · ½×</option><option value="1" selected>Normal · 1×</option><option value="2">Fast · 2×</option><option value="3">Very fast · 3×</option></select></label>
+        <div class="queue-actions"><button id="add-sheet" class="oc-button" type="button">+ Sheet</button><button id="add-five" class="oc-button" type="button" aria-label="Queue five sheets">+ 5</button><button id="queue-button" class="oc-button" type="button" aria-haspopup="dialog" aria-controls="queue-dialog">Queue (0)</button></div>
+        <button id="pause-button" class="oc-button" type="button" aria-pressed="false" hidden>Pause</button>
+        <button id="empty-button" class="oc-button" type="button" disabled>Empty bin</button>
+      </div>
+    </footer>
+    <p id="announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+  </main>
+  <dialog id="info-dialog" aria-labelledby="info-title">
+    <div class="dialog-header"><h2 id="info-title">One last task.</h2><button id="close-info" class="oc-button" aria-label="Close help">Close</button></div>
+    <div class="help-copy">
+      <p>Press the amber button on the shredder. The page feeds through the head, becomes eighteen ribbons, then settles into the bin.</p>
+      <p><strong>Again?</strong> Queue as many sheets as you like with + Sheet or + 5. Pick a speed and add files while the machine runs. Empty bin clears the contents after the current sheet finishes.</p>
+      <p><strong>Explore</strong> · Use Look around or the small + markers. Read a note, open the drawer, wake the monitor, or turn the lamp off for moonlight. Shredding returns the camera to the machine.</p>
+      <p><strong>Keyboard</strong> · Tab to the machine button, then use Enter or Space. All controls work with touch too.</p>
+      <p><strong>Reduced motion</strong> · The machine uses two still steps: halfway through, then settled. Press its button for each step. No camera movement or vibration.</p>
+      <p class="support-note">A small illustrated simulation. Example pages are fictional. Selected files stay in this browser; no file data is sent anywhere and originals are never modified or deleted. There are no accounts or saved documents. Older shreds compress into a fixed-size visual pile so you can keep going. Needs a WebGL 2 browser. Paper stays only in this tab.</p>
+    </div>
+    <details class="notices-disclosure" id="third-party-notices">
+      <summary>Third-party notices<svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg></summary>
+      <div id="notices-panel"></div>
+    </details>
+  </dialog>
+  <dialog id="guide-dialog" class="guide-dialog" aria-labelledby="guide-title">
+    <div class="dialog-header"><h2 id="guide-title">Use this project</h2><button id="close-guide" class="oc-button" aria-label="Close guide">Close</button></div>
+    <p class="guide-intro">The guide for you and your agent.</p>
+    <div id="guide-panel"></div>
+  </dialog>
+  <dialog id="upload-dialog" aria-labelledby="upload-title">
+    <div class="dialog-header"><h2 id="upload-title">Your files. Your browser.</h2><button id="close-upload" class="oc-button" aria-label="Close file dialog">Close</button></div>
+    <div class="help-copy"><p>Choose a file to turn into paper and shred. <strong>Everything happens locally in this browser. Nothing is uploaded.</strong></p><p>Your original file is never changed or deleted. This is a visual simulation.</p><p class="support-note">PDFs, images and UTF-8 text show their contents. Other formats become a cover sheet with their filename and size. Password-protected PDFs need an unlocked copy.</p></div>
+    <label class="file-picker" for="local-files">Choose files<input id="local-files" type="file" multiple></label>
+    <p id="file-status" class="file-status" role="status">Files are rendered one page at a time.</p>
+    <button id="queue-files" class="oc-button" type="button" disabled>Queue selected files</button>
+  </dialog>
+  <dialog id="queue-dialog" aria-labelledby="queue-title">
+    <div class="dialog-header"><h2 id="queue-title">Waiting to be shredded</h2><button id="close-queue" class="oc-button" aria-label="Close queue">Close</button></div>
+    <p class="support-note">The loaded sheet goes first. New files and example sheets join the end of this queue.</p>
+    <ul id="queue-list" class="queue-list"></ul>
+    <button id="clear-queue" class="oc-button" type="button">Clear waiting queue</button>
+  </dialog>
+  <dialog id="note-dialog" class="note-dialog" aria-labelledby="note-title">
+    <div class="dialog-header"><h2 id="note-title"></h2><button id="close-note" class="oc-button" aria-label="Close note">Close</button></div>
+    <p id="note-copy"></p><span class="note-footnote">A fictional note from this little office.</span>
+  </dialog>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

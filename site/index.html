@@ -28,7 +28,7 @@
           <button class="search-toggle" id="search-toggle" type="button" aria-label="Search projects" aria-expanded="false" aria-controls="project-search"><svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.3"/><path d="m13 13 4 4" stroke="currentColor" stroke-width="1.3"/></svg></button>
           <input id="project-search" type="search" aria-label="Search projects" placeholder="Search projects" autocomplete="off" tabindex="-1" inert />
         </div>
-        <label class="sr-only" for="project-filter">Filter projects</label><select class="oc-button" id="project-filter"><option value="all">All projects</option><option value="typography">Typography</option></select>
+        <label class="sr-only" for="project-filter">Filter projects</label><select class="oc-button" id="project-filter"><option value="all">All projects</option><option value="typography">Typography</option><option value="3d">3D scenes</option></select>
       </div>
       <div class="collection-actions">
         <a class="oc-button" href="https://github.com/zesterLK/opencartel" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -37,7 +37,7 @@
       </div>
     </section>
     <section id="projects" class="project-collection" aria-label="Projects">
-      <p class="sr-only" id="collection-status" role="status">1 project</p>
+      <p class="sr-only" id="collection-status" role="status">2 projects</p>
       <div class="project-grid" id="project-grid">
         <article class="project" aria-labelledby="words-title" data-project="words-have-weight" data-category="typography" data-search="words have weight typography interaction physics lift stretch melt bounce">
           <a class="project-card" href="/words-have-weight/" aria-labelledby="words-title" aria-describedby="words-description" data-cursor="project">
@@ -48,6 +48,19 @@
             <div class="project-overlay">
               <h3 id="words-title">Words Have Weight</h3>
               <p id="words-description">Lift, stretch, melt and bounce.</p>
+            </div>
+          </div>
+          </a>
+        </article>
+        <article class="project" aria-labelledby="shredder-title" data-project="paper-shredder" data-category="3d" data-search="paper shredder 3d scene office after hours interaction paper ribbons shred reload">
+          <a class="project-card" href="/paper-shredder/" aria-labelledby="shredder-title" aria-describedby="shredder-description" data-cursor="project">
+          <div class="project-media">
+            <video class="project-video" muted loop playsinline preload="metadata" poster="/previews/paper-shredder.webp" aria-hidden="true" tabindex="-1">
+              <source src="/previews/paper-shredder.webm" type="video/webm" />
+            </video>
+            <div class="project-overlay">
+              <h3 id="shredder-title">Paper Shredder</h3>
+              <p id="shredder-description">A quiet office. One last sheet.</p>
             </div>
           </div>
           </a>
