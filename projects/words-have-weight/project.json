@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "slug": "words-have-weight",
+  "title": "Words have weight",
+  "description": "An interactive typography playground with six physical word behaviours.",
+  "status": "ready",
+  "technologies": [
+    "TypeScript",
+    "SVG",
+    "opentype.js",
+    "Vite"
+  ],
+  "codeLicense": "MIT",
+  "demo": "https://opencartel.tech/words-have-weight/"
+}

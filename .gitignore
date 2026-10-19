@@ -1,0 +1,45 @@
+# Operating system and editor output
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Dependencies and generated application output
+node_modules/
+.next/
+.nuxt/
+.svelte-kit/
+.turbo/
+.cache/
+dist/
+build/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local credentials and runtime state
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+*.p12
+*.pfx
+*.log
+.vercel/
+.netlify/
+.npmrc
+
+# Local scratch directories are never publication sources
+/private/
+/research/
+/notes/
+/tmp/

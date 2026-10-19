@@ -1,0 +1,74 @@
+/* Monochrome, two-edge construction stays legible over both media and color themes. */
+.oc-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  z-index: 2147483646;
+  opacity: 0;
+  pointer-events: none !important;
+  user-select: none;
+  contain: layout style;
+}
+.oc-cursor * { pointer-events: none !important; }
+.oc-cursor.is-visible { opacity: 1; }
+.oc-cursor__point,
+.oc-cursor__ring {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.oc-cursor__point {
+  width: 8px;
+  height: 8px;
+  background: #171717;
+  border: 1px solid #fff;
+  box-shadow: 0 1px 2px #0004;
+  transition: transform 120ms ease, opacity 120ms ease;
+}
+.oc-cursor__ring {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #171717;
+  box-shadow: 0 0 0 1px #ffffffd9, inset 0 0 0 1px #ffffffbd, 0 2px 3px #0002;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(.4);
+  transition: transform 150ms cubic-bezier(.2,.75,.3,1), opacity 120ms ease;
+}
+.oc-cursor[data-mode='action'] .oc-cursor__ring,
+.oc-cursor[data-mode='project'] .oc-cursor__ring,
+.oc-cursor[data-mode='grab'] .oc-cursor__ring,
+.oc-cursor[data-mode='dragging'] .oc-cursor__ring {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+.oc-cursor[data-mode='action'] .oc-cursor__point { transform: translate(-50%, -50%) scale(.55); }
+.oc-cursor[data-mode='project'] .oc-cursor__ring { transform: translate(-50%, -50%) scale(1.4); }
+.oc-cursor[data-mode='project'] .oc-cursor__point { transform: translate(-50%, -50%) scale(.7); }
+.oc-cursor[data-mode='grab'] .oc-cursor__ring { border-style: dashed; }
+.oc-cursor[data-mode='grab'] .oc-cursor__point { transform: translate(-50%, -50%) scale(.65); }
+.oc-cursor[data-mode='dragging'] .oc-cursor__ring { transform: translate(-50%, -50%) scale(.7); }
+.oc-cursor[data-mode='dragging'] .oc-cursor__point { transform: translate(-50%, -50%) scale(.9); }
+.oc-cursor.is-pressed:not([data-mode='dragging']) .oc-cursor__ring { transform: translate(-50%, -50%) scale(.78); }
+.oc-cursor.is-pressed:not([data-mode='dragging']) .oc-cursor__point { transform: translate(-50%, -50%) scale(.55); }
+
+html.oc-cursor-active,
+html.oc-cursor-active * { cursor: none !important; }
+html.oc-cursor-active dialog::backdrop,
+html.oc-cursor-active [popover]::backdrop { cursor: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .oc-cursor__point, .oc-cursor__ring { transition: none; }
+}
+@media (hover: none), (pointer: coarse), (forced-colors: active) {
+  .oc-cursor { display: none !important; }
+  html.oc-cursor-active,
+  html.oc-cursor-active * { cursor: revert !important; }
+  html.oc-cursor-active dialog::backdrop,
+  html.oc-cursor-active [popover]::backdrop { cursor: revert !important; }
+}

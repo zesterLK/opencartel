@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "slug": "project-slug",
+  "title": "Project title",
+  "description": "Replace with a factual description of the experience.",
+  "status": "in-progress",
+  "technologies": [],
+  "codeLicense": "MIT",
+  "demo": null
+}

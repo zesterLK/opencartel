@@ -1,0 +1,22 @@
+{
+  "name": "opencartel",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.18.0 <23"
+  },
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort",
+    "downloads": "node scripts/downloads.mjs",
+    "check": "python3 scripts/check_repository.py"
+  },
+  "devDependencies": {
+    "fflate": "0.8.3",
+    "vite": "8.3.4"
+  }
+}

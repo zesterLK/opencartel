@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="Give a word a little gravity. An interactive typography playground: lift, stretch, balance, whisper, melt, and bounce." />
+  <title>Words have weight</title>
+  <link rel="icon" href="data:," />
+</head>
+<body>
+  <main class="experience">
+    <header class="masthead">
+      <div class="masthead-brand">
+        <a id="origin-link" class="origin-link oc-button" aria-label="Home" title="Home" hidden>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z" /></svg>
+        </a>
+        <h1 class="oc-pressed">Words have weight</h1>
+      </div>
+      <div class="masthead-actions">
+        <button id="info-button" class="text-button oc-button" aria-haspopup="dialog" aria-controls="info-dialog">Help</button>
+        <a id="source-download" class="oc-button" download="words-have-weight-source.zip">Download source</a>
+      </div>
+    </header>
+    <section class="playground" aria-label="Interactive typography">
+      <svg id="stage" viewBox="0 0 1400 700" role="group" tabindex="0" aria-label="Word playground" aria-describedby="stage-help" xmlns="http://www.w3.org/2000/svg">
+        <title id="scene-title">heavy — heavy behaviour</title>
+        <desc>Drag a letter to feel its weight. Use the controls below to change the word and its behaviour.</desc>
+        <path id="ghost-line" class="ghost-line" />
+        <path id="baseline" class="baseline" />
+        <path id="fulcrum" fill="#111" hidden />
+        <g id="glyphs" aria-hidden="true"></g>
+        <text id="fallback-word" aria-hidden="true" text-anchor="middle" hidden></text>
+      </svg>
+      <p id="loading" class="loading">Setting the type<span aria-hidden="true">…</span></p>
+      <p id="stage-help" class="stage-help">Lift a letter.</p>
+      <p id="motion-note" class="motion-note" hidden>Reduced motion</p>
+    </section>
+    <footer class="controls">
+      <form id="word-form" class="word-form" autocomplete="off">
+        <label class="sr-only" for="word-input">Your word, up to 16 characters</label>
+        <input id="word-input" name="word" type="text" placeholder="Type a word" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="word-message" />
+        <span id="word-message" class="word-message"></span>
+      </form>
+      <div class="mode-controls" role="group" aria-label="Word behaviour">
+        <button class="oc-button" type="button" data-mode="heavy" aria-pressed="true">heavy</button>
+        <button class="oc-button" type="button" data-mode="stretch" aria-pressed="false">stretch</button>
+        <button class="oc-button" type="button" data-mode="balance" aria-pressed="false">balance</button>
+        <button class="oc-button" type="button" data-mode="whisper" aria-pressed="false">whisper</button>
+        <button class="oc-button" type="button" data-mode="melt" aria-pressed="false">melt</button>
+        <button class="oc-button" type="button" data-mode="bounce" aria-pressed="false">bounce</button>
+      </div>
+      <button id="reset-button" class="reset-button oc-button" type="button">Reset</button>
+    </footer>
+    <p id="announcement" class="sr-only" aria-live="polite" aria-atomic="true"></p>
+  </main>
+  <dialog id="info-dialog" aria-labelledby="info-title">
+    <div class="dialog-header"><h2 id="info-title">Controls</h2><button id="close-info" class="close-button oc-button" aria-label="Close help">Close</button></div>
+    <dl class="mode-guide">
+      <div><dt>heavy</dt><dd>Lift and release.</dd></div>
+      <div><dt>stretch</dt><dd>Pull sideways.</dd></div>
+      <div><dt>balance</dt><dd>Move the weight left or right.</dd></div>
+      <div><dt>whisper</dt><dd>Move closer or touch.</dd></div>
+      <div><dt>melt</dt><dd>Pull down.</dd></div>
+      <div><dt>bounce</dt><dd>Lift and let go.</dd></div>
+    </dl>
+    <p class="keyboard-guide"><strong>Keyboard</strong> · Focus the canvas. Arrows move; Shift moves further. Space lifts or releases. Escape lets go.</p>
+    <p class="support-note">Up to 16 characters. Other scripts and emoji use browser text with simpler motion.</p>
+    <div class="dialog-footer">
+      <p>Run or adapt this project with your agent.</p>
+      <div class="guide-actions">
+        <button id="copy-agent-guide" class="oc-button" type="button">Copy guide</button>
+        <a class="oc-button" data-agent-guide href="./integrate.md" download="words-have-weight-integration.md">Download guide</a>
+      </div>
+      <p id="guide-feedback" role="status"></p>
+      <p><a href="./licenses/THIRD-PARTY-NOTICES.txt" download="words-have-weight-third-party-notices.txt">Third-party notices</a></p>
+    </div>
+  </dialog>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
