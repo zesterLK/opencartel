@@ -34,7 +34,9 @@ export function createRenderer(canvas, plates, { intro = false } = {}) {
     context.fillStyle = '#152d3b';
     context.fillRect(0, 0, width, height);
     context.imageSmoothingEnabled = true;
-    context.imageSmoothingQuality = 'high';
+    // Bilinear filtering stays on the fast compositing path as nested images
+    // grow. High-quality resampling caused long raster stalls at full size.
+    context.imageSmoothingQuality = 'low';
     let layers = 0;
     function draw(index, transform, clip, level) {
       const plate = plates[index];
