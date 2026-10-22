@@ -41,6 +41,8 @@ npm run preview
 
 Preview opens a local server at `http://127.0.0.1:4173/`. The output in `dist/` contains the catalog, each experiment under its own route, and source ZIPs in `dist/downloads/`. Preview is a local verification server, not a production hosting service. Unknown paths return 404 rather than rendering the catalog.
 
+The custom `site/404.html` compass follows a bouncing Home icon. Its controls pause motion and cycle through 1×–4× speed. Hover or focus holds the Home link still; reduced motion parks it below the message. The original SVG/CSS artwork and motion code live in `site/404.html` and `site/src/not-found.*`. Run its motion boundary checks with `node --test site/src/compass-motion.test.js`.
+
 ## Hosting
 
 The repository includes `vercel.json` for a static Vercel deployment. Import the repository root, use Node.js 22, and deploy `main` as production. The configuration installs the root and each independent project's locked dependencies, builds the complete collection, and serves `dist/`. No environment variables are required. Keep directory-style project routes and real 404 responses; do not add a catch-all SPA rewrite.
