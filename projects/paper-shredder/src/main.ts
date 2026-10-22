@@ -1,3 +1,4 @@
+import { mountScrollRails } from './scroll-rail.js';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { PaperPage, BinArchive, type Anchors } from './paper-renderer.ts';
@@ -28,6 +29,8 @@ const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
 const events = new AbortController();
 const { signal } = events;
 const disposeCursor = mountCursor();
+const disposeRails = mountScrollRails();
+import.meta.hot?.dispose(disposeRails);
 const disposeMotion = mountPageMotion();
 let renderer: THREE.WebGLRenderer | null = null;
 let scene: THREE.Scene | null = null;
@@ -584,7 +587,7 @@ function dispose(): void {
   disposed = true; generation += 1; events.abort(); loadAbort?.abort(); fileAbort?.abort();
   if (raf) cancelAnimationFrame(raf);
   resizeObserver.disconnect(); guidePanel.dispose(); noticesPanel.dispose();
-  disposeCursor(); disposeMotion(); destroyScene();
+  disposeRails(); disposeCursor(); disposeMotion(); destroyScene();
 }
 window.addEventListener('pagehide', event => { if (!event.persisted) dispose(); }, { signal });
 window.addEventListener('pageshow', () => { previous = 0; wake(); }, { signal });

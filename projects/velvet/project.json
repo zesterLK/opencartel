@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "slug": "velvet",
+  "title": "Velvet",
+  "description": "Brush a velvet surface to leave directional strokes, then turn the light to change their sheen.",
+  "status": "ready",
+  "technologies": [
+    "JavaScript",
+    "Three.js",
+    "WebGL",
+    "Vite"
+  ],
+  "codeLicense": "MIT",
+  "demo": null
+}

@@ -3,7 +3,9 @@
 - `public/previews/words-have-weight.webm` and `words-have-weight.png`: original silent recording and poster of the included Words Have Weight application, captured on 19 October 2026. The nine-second loop shows the real heavy-mode pointer lift and release. Only the stage was recorded; application controls were hidden for capture. It is a preview of the actual project, not a generated concept. Original application code is MIT licensed. The lettering uses Archivo Black; the font and its SIL Open Font License are included in the project's `public/fonts/` directory. See that project's attribution for the upstream font source.
 - `public/previews/paper-shredder.webm` and `paper-shredder.webp`: original silent runtime recording and ready-state poster of the included Paper Shredder application, captured on 20 October 2026. The approximately 10.5-second WebM shows the actual page feeding, ribbons releasing, and paper settling in the bin. Only the rendered scene is recorded, at 960 × 409; the poster is a scene-only browser capture. These are original MIT-licensed runtime captures, not generated concepts. See the project's `ATTRIBUTION.md` for the scene and runtime asset provenance.
 
-No third-party reference screenshots, brand logos, concept images or research materials are bundled in the site.
+- `public/previews/velvet.jpg`: original browser screenshot of the included Velvet application, captured on 22 October 2026. It shows a real directional stroke on the procedural burgundy surface and the application controls. This is an original MIT-licensed runtime capture, not a generated concept. See the project’s `ATTRIBUTION.md` for runtime and font notices.
+
+No third-party reference screenshots, concept images or research materials are bundled in the site.
 
 ## Typography
 

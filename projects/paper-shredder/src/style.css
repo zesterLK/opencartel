@@ -48,10 +48,15 @@ dialog::backdrop{background:#1d222952;backdrop-filter:blur(7px)}.dialog-header{d
 .controls .active-page,.controls .bin-meter #bin-count{color:#e6e0d6}
 .controls .scene-state,.controls .bin-meter label,.controls .compact-select>span{text-shadow:0 1px 3px #0006}
 .controls .bin-meter progress::-webkit-progress-bar{background:#ffffff35}
-.masthead .oc-button,.masthead .oc-pressed,.controls .oc-button,.controls select{background:linear-gradient(180deg,#fffefaed,#eeedf0c7);border-color:#ffffff70}
-.masthead .oc-button:hover,.controls .oc-button:hover{background:linear-gradient(180deg,#fffefaf7,#eeedf0e6)}
+
 @media(max-width:700px){.masthead{padding-top:max(14px,env(safe-area-inset-top))}.controls{padding-bottom:max(16px,env(safe-area-inset-bottom))}}
 @media(max-width:470px){.masthead{padding-top:max(12px,env(safe-area-inset-top))}.controls{padding-bottom:max(12px,env(safe-area-inset-bottom))}}
 @media(forced-colors:active){.masthead,.controls{background:Canvas;color:CanvasText}.masthead::before,.controls::before{display:none}.controls .active-page,.controls .bin-meter #bin-count{color:CanvasText}.controls .scene-state,.controls .bin-meter label,.controls .compact-select>span{text-shadow:none}}
 
-@media(max-width:700px){.compact-select:has(#office-view){flex:1 1 auto}#upload-button{order:0;margin-right:0}.compact-select:has(#feed-speed){flex:1 1 100%;justify-content:flex-end}.compact-select:has(#feed-speed) select{flex:0 1 auto}.queue-actions{flex:1}}
+/* One scrollable action rail preserves target sizes on narrow screens. */
+.masthead,.controls{--oc-ink:#fff5ec;--oc-edge:#ffffff40;--oc-glass-top:#302c385c;--oc-glass-bottom:#171c2e80;--oc-glass-hover:#5149569e}
+.controls .control-actions{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;gap:8px;padding:4px 2px 8px;scrollbar-width:thin;scrollbar-color:#ffffff66 transparent;scroll-padding-inline:4px}
+.control-actions>*{flex:0 0 auto!important}.control-actions:focus-visible{outline:1px solid #fff5ec;outline-offset:2px}.control-actions .queue-actions{flex-wrap:nowrap;gap:7px}.control-actions .compact-select{white-space:nowrap}.control-actions .compact-select select{flex:none;min-width:0;font-size:12px;color:var(--oc-ink);background:linear-gradient(150deg,var(--oc-glass-top),var(--oc-glass-bottom));border-color:var(--oc-edge);border-radius:6px}.compact-select option{color:#fff5ec;background:#252331}
+@media(max-width:900px){.control-summary{gap:8px}.controls .compact-select>span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.control-actions .compact-select select{font-size:11px;min-height:36px}.control-actions #office-view{max-width:128px}.controls .control-actions{margin-inline:-2px}.controls{padding-inline:12px}.control-summary .scene-state p{font-size:11px}}
+
+.controls{--oc-rail-tint:#24263366;--oc-select-arrow:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23fff5ec' stroke-width='1.4'%3E%3Cpath d='m2 4 4 4 4-4'/%3E%3C/svg%3E")}

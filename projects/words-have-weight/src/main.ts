@@ -1,3 +1,4 @@
+import { mountScrollRails } from './scroll-rail.js';
 import opentype from 'opentype.js';
 import type { Font, PathCommand } from 'opentype.js';
 import './style.css';
@@ -12,6 +13,8 @@ import { MODES, SPRINGS, clamp, contactPath, createNodes, curveY, frameSteps, ke
 import type { Mode, Point, SpringNode } from './geometry.ts';
 
 const disposeCursor = mountCursor();
+const disposeRails = mountScrollRails();
+import.meta.hot?.dispose(disposeRails);
 const disposeMotion = mountPageMotion();
 import.meta.hot?.dispose(disposeMotion);
 import.meta.hot?.dispose(disposeCursor);

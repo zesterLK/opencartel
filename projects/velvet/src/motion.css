@@ -1,0 +1,8 @@
+/* Motion adds a little continuity without changing the layout or blocking native navigation. */
+body{transition:opacity 140ms ease}
+.oc-page-leaving body{opacity:0}
+dialog[open]::backdrop{animation:oc-backdrop-in 220ms ease-out both}
+dialog[open].is-closing::backdrop{animation:oc-backdrop-out 150ms ease-in both}
+@keyframes oc-backdrop-in{from{opacity:0}to{opacity:1}}
+@keyframes oc-backdrop-out{from{opacity:1}to{opacity:0}}
+@media(prefers-reduced-motion:reduce){body{transition:none}.oc-page-leaving body{opacity:1}dialog[open]::backdrop,dialog[open].is-closing::backdrop{animation:none}}

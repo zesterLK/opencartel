@@ -63,6 +63,10 @@ function cancelMotion() {
 
 function fit(force = false) {
   const nextWidth = heading.clientWidth;
+  // Hidden navigation/viewport transitions can briefly report zero width.
+  // Never persist that transient measurement as a zero-size wordmark.
+  if (nextWidth <= 0) return;
+  if (parseFloat(getComputedStyle(heading).fontSize) <= 0) heading.style.removeProperty("font-size");
   if (!force && Math.abs(nextWidth - width) < .5 && Math.abs(measure.getBoundingClientRect().width - nextWidth) < .5) return;
   cancelMotion();
   // Re-measure after changing size: a variable-font instance can settle on the

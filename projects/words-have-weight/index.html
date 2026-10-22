@@ -10,17 +10,18 @@
 </head>
 <body>
   <main class="experience">
-    <header class="masthead">
+    <header class="masthead oc-masthead">
       <div class="masthead-brand">
         <a id="origin-link" class="origin-link oc-button" aria-label="Home" title="Home" data-cursor-label="go home" hidden>
           <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z" /></svg>
         </a>
-        <h1 class="oc-pressed">Words have weight</h1>
+        <h1 class="oc-pressed" title="Words have weight">Words have weight</h1>
       </div>
       <div class="masthead-actions">
         <button id="info-button" class="text-button oc-button" aria-haspopup="dialog" aria-controls="info-dialog" data-cursor-label="get help">Help</button>
         <button id="guide-button" class="oc-button" aria-haspopup="dialog" aria-controls="guide-dialog" data-cursor-label="read guide">Guide</button>
-        <a id="source-download" class="oc-button" download="words-have-weight-source.zip" data-cursor-label="download source">Download source</a>
+        <a id="source-download" class="oc-button" download="words-have-weight-source.zip" data-cursor-label="download source" aria-label="Download source"><span class="oc-source-long">Download source</span><span class="oc-source-short" aria-hidden="true">Source</span></a>
+        <a class="oc-button project-github" href="https://github.com/zesterLK/opencartel/tree/main/projects/words-have-weight" target="_blank" rel="noopener noreferrer" aria-label="View project on GitHub" title="View project on GitHub"><svg class="github-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 5v-4c0-1-.2-2-1-2 3-.3 6-1.4 6-6a5 5 0 0 0-1-3 5 5 0 0 0-.1-4s-1-.3-4 1a14 14 0 0 0-7 0C5 2.7 4 3 4 3a5 5 0 0 0-.1 4 5 5 0 0 0-1 3c0 4.6 3 5.7 6 6-.8.6-1 1.5-1 2v4"/></svg></a>
       </div>
     </header>
     <section class="playground" aria-label="Interactive typography">
@@ -43,14 +44,14 @@
         <input id="word-input" name="word" type="text" placeholder="Type a word" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="word-message" />
         <span id="word-message" class="word-message"></span>
       </form>
-      <div class="mode-controls" role="group" aria-label="Word behaviour">
+      <div class="oc-scroll-shell mode-controls-shell"><div class="mode-controls oc-scroll-rail" role="group" aria-label="Word behaviour">
         <button class="oc-button" type="button" data-mode="heavy" aria-pressed="true">heavy</button>
         <button class="oc-button" type="button" data-mode="stretch" aria-pressed="false">stretch</button>
         <button class="oc-button" type="button" data-mode="balance" aria-pressed="false">balance</button>
         <button class="oc-button" type="button" data-mode="whisper" aria-pressed="false">whisper</button>
         <button class="oc-button" type="button" data-mode="melt" aria-pressed="false">melt</button>
         <button class="oc-button" type="button" data-mode="bounce" aria-pressed="false">bounce</button>
-      </div>
+      </div></div>
       <button id="reset-button" class="reset-button oc-button" type="button">Reset</button>
     </footer>
     <p id="announcement" class="sr-only" aria-live="polite" aria-atomic="true"></p>

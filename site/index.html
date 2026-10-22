@@ -25,44 +25,55 @@
     <section class="collection-tools" aria-label="Collection controls">
       <div class="collection-find">
         <div class="search-control" id="search-control">
-          <button class="search-toggle" id="search-toggle" type="button" aria-label="Search projects" aria-expanded="false" aria-controls="project-search"><svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.3"/><path d="m13 13 4 4" stroke="currentColor" stroke-width="1.3"/></svg></button>
+          <button class="search-toggle oc-button" id="search-toggle" type="button" aria-label="Search projects" aria-expanded="false" aria-controls="project-search"><svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.3"/><path d="m13 13 4 4" stroke="currentColor" stroke-width="1.3"/></svg></button>
           <input id="project-search" type="search" aria-label="Search projects" placeholder="Search projects" autocomplete="off" tabindex="-1" inert />
         </div>
-        <label class="sr-only" for="project-filter">Filter projects</label><select class="oc-button" id="project-filter"><option value="all">All projects</option><option value="typography">Typography</option><option value="3d">3D scenes</option></select>
+        <label class="sr-only" for="project-filter">Filter projects</label><select class="oc-button" id="project-filter"><option value="all">All projects</option><option value="typography">Typography</option><option value="3d">3D scenes</option><option value="material">Materials</option></select>
       </div>
       <div class="collection-actions">
-        <a class="oc-button" href="https://github.com/zesterLK/opencartel" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="oc-button" href="https://github.com/zesterLK/opencartel" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><svg class="github-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 5v-4c0-1-.2-2-1-2 3-.3 6-1.4 6-6a5 5 0 0 0-1-3 5 5 0 0 0-.1-4s-1-.3-4 1a14 14 0 0 0-7 0C5 2.7 4 3 4 3a5 5 0 0 0-.1 4 5 5 0 0 0-1 3c0 4.6 3 5.7 6 6-.8.6-1 1.5-1 2v4"/></svg><span class="github-label">GitHub</span></a>
         <button class="oc-button" type="button" id="license-button" aria-haspopup="dialog" aria-controls="license-dialog">License</button>
         <button class="oc-button motion-toggle" id="preview-motion" type="button" aria-pressed="false" aria-label="Pause previews" title="Pause previews"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path class="pause-symbol" d="M5 3v10M11 3v10" fill="none" stroke="currentColor" stroke-width="2"/><path class="play-symbol" d="M5 2.5 13 8 5 13.5Z" fill="currentColor"/></svg></button>
       </div>
     </section>
     <section id="projects" class="project-collection" aria-label="Projects">
-      <p class="sr-only" id="collection-status" role="status">2 projects</p>
+      <p class="sr-only" id="collection-status" role="status">3 projects</p>
       <div class="project-grid" id="project-grid">
         <article class="project" aria-labelledby="words-title" data-project="words-have-weight" data-category="typography" data-search="words have weight typography interaction physics lift stretch melt bounce">
           <a class="project-card" href="/words-have-weight/" aria-labelledby="words-title" aria-describedby="words-description" data-cursor="project">
-          <div class="project-media">
+          <div class="project-frame"><div class="project-media">
             <video class="project-video" muted loop playsinline preload="metadata" poster="/previews/words-have-weight.png" aria-hidden="true" tabindex="-1">
               <source src="/previews/words-have-weight.webm" type="video/webm" />
             </video>
-            <div class="project-overlay">
+            </div></div>
+            <div class="project-caption">
               <h3 id="words-title">Words Have Weight</h3>
               <p id="words-description">Lift, stretch, melt and bounce.</p>
             </div>
-          </div>
           </a>
         </article>
         <article class="project" aria-labelledby="shredder-title" data-project="paper-shredder" data-category="3d" data-search="paper shredder 3d scene office after hours interaction paper ribbons shred reload">
           <a class="project-card" href="/paper-shredder/" aria-labelledby="shredder-title" aria-describedby="shredder-description" data-cursor="project">
-          <div class="project-media">
+          <div class="project-frame"><div class="project-media">
             <video class="project-video" muted loop playsinline preload="metadata" poster="/previews/paper-shredder.webp" aria-hidden="true" tabindex="-1">
               <source src="/previews/paper-shredder.webm" type="video/webm" />
             </video>
-            <div class="project-overlay">
+            </div></div>
+            <div class="project-caption">
               <h3 id="shredder-title">Paper Shredder</h3>
               <p id="shredder-description">A quiet office. One last sheet.</p>
             </div>
-          </div>
+          </a>
+        </article>
+        <article class="project" aria-labelledby="velvet-title" data-project="velvet" data-category="material" data-search="velvet material fabric brush fibre fibers nap sheen texture light interaction">
+          <a class="project-card" href="/velvet/" aria-labelledby="velvet-title" aria-describedby="velvet-description" data-cursor="project">
+          <div class="project-frame"><div class="project-media">
+            <img class="project-video" src="/previews/velvet.jpg" alt="A brushed stroke catching the light on the burgundy Velvet surface." width="1280" height="720" loading="lazy" decoding="async" />
+            </div></div>
+            <div class="project-caption">
+              <h3 id="velvet-title">Velvet</h3>
+              <p id="velvet-description">Brush either way. Follow the sheen.</p>
+            </div>
           </a>
         </article>
       </div>

@@ -63,9 +63,8 @@ search.addEventListener('input', filterProjects);
 filter.addEventListener('change', filterProjects);
 filterProjects();
 
-// One collection-level control replaces controls on individual thumbnails.
-const previews = projects.map(project => {
-  const video = project.querySelector('video');
+// Static previews need no playback controller. The collection control still owns videos.
+const previews = projects.map(project => project.querySelector('video')).filter(Boolean).map(video => {
   const state = { video, visible: false, failed: false };
   const sync = () => {
     if (state.visible && !paused && !document.hidden && !state.failed) video.play().catch(() => { paused = true; syncPlayback(); });

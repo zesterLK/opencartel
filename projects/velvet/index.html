@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#280710" />
+  <meta name="description" content="Brush either way. A full-screen velvet surface whose directional fibres hold your strokes and catch the light." />
+  <title>Velvet — OpenCartel</title>
+  <link rel="icon" href="data:," />
+</head>
+<body class="velvet-page">
+  <main class="experience">
+    <canvas id="velvet" tabindex="0" role="application" aria-label="Interactive velvet surface" aria-describedby="canvas-instructions" data-cursor="grab" data-cursor-label=""></canvas>
+    <p id="canvas-instructions" class="sr-only">Drag across the surface to brush the velvet. With the surface focused, arrow keys move the brush. Space starts or stops brushing. Hold Shift with an arrow to move further. Escape stops brushing. Light changes the direction of the light. Smooth clears your strokes.</p>
+    <header class="masthead oc-masthead">
+      <div class="masthead-brand">
+        <a id="origin-link" class="origin-link oc-button" aria-label="Home" title="Home" data-cursor-label="go home" hidden>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z" /></svg>
+        </a>
+        <h1 class="oc-pressed" title="Velvet">Velvet</h1>
+      </div>
+      <nav class="masthead-actions" aria-label="Project information">
+        <button id="info-button" class="oc-button" type="button" aria-haspopup="dialog" aria-controls="info-dialog" data-cursor-label="get help">Help</button>
+        <button id="guide-button" class="oc-button" type="button" aria-haspopup="dialog" aria-controls="guide-dialog" data-cursor-label="read guide">Guide</button>
+        <a id="source-download" class="oc-button" download="velvet-source.zip" data-cursor-label="download source" aria-label="Download source"><span class="oc-source-long">Download source</span><span class="oc-source-short" aria-hidden="true">Source</span></a>
+        <a class="oc-button project-github" href="https://github.com/zesterLK/opencartel/tree/main/projects/velvet" target="_blank" rel="noopener noreferrer" aria-label="View project on GitHub" title="View project on GitHub"><svg class="github-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 5v-4c0-1-.2-2-1-2 3-.3 6-1.4 6-6a5 5 0 0 0-1-3 5 5 0 0 0-.1-4s-1-.3-4 1a14 14 0 0 0-7 0C5 2.7 4 3 4 3a5 5 0 0 0-.1 4 5 5 0 0 0-1 3c0 4.6 3 5.7 6 6-.8.6-1 1.5-1 2v4"/></svg></a>
+      </nav>
+    </header>
+    <div id="loading" class="loading" role="status">Preparing the velvet…</div>
+    <section id="fallback" class="fallback" aria-labelledby="fallback-title" hidden>
+      <h2 id="fallback-title">The velvet needs WebGL.</h2>
+      <p id="fallback-message">Your browser could not start the fabric. Try again, or use a browser with hardware acceleration enabled.</p>
+      <button id="retry-button" class="oc-button" type="button">Try again</button>
+      <p class="fallback-footnote">The guide and source are still available above.</p>
+    </section>
+    <footer class="surface-controls">
+      <p class="gesture-hint" aria-hidden="true">Brush either way</p>
+      <div class="material-controls">
+        <details id="light-controls" class="light-controls">
+          <summary class="oc-button" data-cursor-label="turn the light">Light</summary>
+          <div class="light-panel">
+            <div class="light-heading"><label for="light-angle">Light direction</label><output id="light-value" for="light-angle">135°</output></div>
+            <input id="light-angle" type="range" min="0" max="359" step="1" value="135" aria-label="Light direction" aria-valuetext="135 degrees" />
+          </div>
+        </details>
+        <button id="smooth-button" class="oc-button" type="button" data-cursor-label="smooth the velvet">Smooth</button>
+      </div>
+    </footer>
+    <p id="announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+  </main>
+  <dialog id="info-dialog" aria-labelledby="info-title">
+    <div class="dialog-heading"><h2 id="info-title">A different kind of mark.</h2><button id="close-info" class="oc-button" type="button" aria-label="Close help">Close</button></div>
+    <p>Drag a finger or pointer over the velvet. Each stroke lays its short fibres in a new direction. Brush back the other way and watch the sheen reverse.</p>
+    <dl class="control-guide">
+      <div><dt>Light</dt><dd>Turn the light around the surface to reveal your marks.</dd></div>
+      <div><dt>Smooth</dt><dd>Lay the whole surface in the same direction and start again.</dd></div>
+      <div><dt>Keyboard</dt><dd>Tab to the velvet. Arrow keys move the brush; Space toggles brushing. Hold Shift to move further. Escape stops brushing.</dd></div>
+    </dl>
+    <p class="support-note">Your strokes stay in this tab until you smooth or reload. This is a stylized material experiment, not a physical cloth simulation. It has no camera movement or automatic animation.</p>
+    <details id="third-party-notices" class="notices-disclosure">
+      <summary>Third-party notices</summary>
+      <div id="notices-panel"></div>
+    </details>
+  </dialog>
+  <dialog id="guide-dialog" class="guide-dialog" aria-labelledby="guide-title">
+    <div class="dialog-heading"><h2 id="guide-title">Use this project</h2><button id="close-guide" class="oc-button" type="button" aria-label="Close guide">Close</button></div>
+    <p class="guide-intro">The guide for you and your agent.</p>
+    <div id="guide-panel"></div>
+  </dialog>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
