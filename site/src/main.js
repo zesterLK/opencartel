@@ -67,7 +67,13 @@ filterProjects();
 const previews = projects.map(project => project.querySelector('video')).filter(Boolean).map(video => {
   const state = { video, visible: false, failed: false };
   const sync = () => {
-    if (state.visible && !paused && !document.hidden && !state.failed) video.play().catch(() => { paused = true; syncPlayback(); });
+    if (state.visible && !paused && !document.hidden && !state.failed) video.play().catch(error => {
+      // Leaving the viewport can interrupt a pending play request. This is not
+      // an autoplay refusal and must not pause the other collection previews.
+      if (error.name === 'AbortError' || !state.visible || paused || document.hidden) return;
+      if (error.name === 'NotAllowedError') { paused = true; syncPlayback(); }
+      else showPoster();
+    });
     else video.pause();
   };
   const showPoster = () => { state.failed = true; video.pause(); };

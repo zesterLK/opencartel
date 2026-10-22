@@ -24,4 +24,4 @@ The renderer keeps bounded neighbouring layers and caps canvas backing storage a
 
 Local Chromium checks cover desktop and emulated portrait layouts, join renders, wheel, keyboard, native mouse dragging, synthetic touch-pointer drag/pinch, Play/Pause, reduced motion, artwork failure/Retry and guide loading. Native touchscreen delivery, physical phone performance, Safari, Firefox and screen-reader output are not independently tested. Painted images soften under extreme magnification before the next layer takes over.
 
-This is locally reviewable source; no public demo is claimed until release verification.
+[Explore Small Worlds](https://opencartel.tech/small-worlds/). Published and verified on 22 October 2026.
