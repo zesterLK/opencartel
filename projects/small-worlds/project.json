@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "slug": "small-worlds",
+  "title": "Small Worlds",
+  "description": "Travel through a painted studio and its postcard, then find yourself inside again.",
+  "status": "ready",
+  "technologies": [
+    "JavaScript",
+    "Canvas 2D",
+    "Vite"
+  ],
+  "codeLicense": "MIT",
+  "demo": null
+}

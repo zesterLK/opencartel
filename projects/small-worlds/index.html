@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#df783c"><meta name="description" content="There is always something inside. Explore a painted city, an artist’s studio and a postcard that leads back home."><title>Small Worlds — OpenCartel</title><link rel="icon" href="data:,"></head><body class="worlds-page"><main class="experience">
+<canvas id="world" tabindex="0" role="application" aria-label="Small Worlds, an illustrated endless journey" aria-describedby="instructions" data-cursor="grab" data-cursor-label=""></canvas>
+<p id="instructions" class="sr-only">Scroll or drag up to travel inward, down to travel back. Use Up and Down arrow keys, plus or minus buttons. Space toggles automatic travel. Home returns to the opening view. Escape pauses. Animation starts only when you choose Play.</p>
+    <header class="masthead oc-masthead">
+      <div class="masthead-brand">
+        <a id="origin-link" class="origin-link oc-button" aria-label="Home" title="Home" data-cursor-label="go home" hidden>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z" /></svg>
+        </a>
+        <h1 class="oc-pressed" title="Small Worlds">Small Worlds</h1>
+      </div>
+      <nav class="masthead-actions" aria-label="Project information">
+        <button id="info-button" class="oc-button" type="button" aria-haspopup="dialog" aria-controls="info-dialog" data-cursor-label="get help">Help</button>
+        <button id="guide-button" class="oc-button" type="button" aria-haspopup="dialog" aria-controls="guide-dialog" data-cursor-label="read guide">Guide</button>
+        <a id="source-download" href="./small-worlds-source.zip" class="oc-button" download="small-worlds-source.zip" data-cursor-label="download source" aria-label="Download source"><span class="oc-source-long">Download source</span><span class="oc-source-short" aria-hidden="true">Source</span></a>
+        <a class="oc-button project-github" href="https://github.com/zesterLK/opencartel/tree/main/projects/small-worlds" target="_blank" rel="noopener noreferrer" aria-label="View project on GitHub" title="View project on GitHub"><svg class="github-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 5v-4c0-1-.2-2-1-2 3-.3 6-1.4 6-6a5 5 0 0 0-1-3 5 5 0 0 0-.1-4s-1-.3-4 1a14 14 0 0 0-7 0C5 2.7 4 3 4 3a5 5 0 0 0-.1 4 5 5 0 0 0-1 3c0 4.6 3 5.7 6 6-.8.6-1 1.5-1 2v4"/></svg></a>
+      </nav>
+    </header>
+
+<div id="loading" class="loading" role="status">Opening the window…</div>
+<section id="fallback" class="fallback" hidden><h2>The world couldn’t open.</h2><p>The artwork could not load. Check your connection and try again.</p><button id="retry" class="oc-button">Try again</button></section>
+<noscript><style>#loading,.surface-controls{display:none}</style><section class="fallback"><h2>Small Worlds needs JavaScript.</h2><p>Enable JavaScript to explore the painted journey. The source remains available with this project.</p></section></noscript>
+<footer class="surface-controls"><p id="scene-label">There is always something inside.</p><div class="journey-controls"><button id="out" class="oc-button" aria-label="Travel outward">−</button><button id="play" class="oc-button" aria-pressed="false">Play</button><button id="in" class="oc-button" aria-label="Travel inward">+</button><button id="reset" class="oc-button">Reset</button></div></footer>
+<p id="announcement" class="sr-only" role="status" aria-live="polite"></p></main>
+<dialog id="info-dialog" aria-labelledby="info-title"><div class="dialog-heading"><h2 id="info-title">There is always something inside.</h2><button id="close-info" class="oc-button">Close</button></div><p>A window opens onto a studio. A postcard holds a city. Its window leads you here again.</p><dl class="control-guide"><div><dt>Explore</dt><dd>Scroll or drag up to move inward. Reverse to retrace the same path. Pinch to zoom on a touch screen.</dd></div><div><dt>Keyboard</dt><dd>Focus the artwork and use Up/Down or +/−. Space starts or pauses the journey. Home resets; Escape pauses.</dd></div><div><dt>Play</dt><dd>A slow continuous journey, started only by you. Any manual input pauses it.</dd></div></dl><p>With reduced motion enabled, manual moves are immediate and automatic travel is disabled. Nothing is sent or stored.</p><details id="third-party-notices"><summary>Artwork and notices</summary><div id="notices-panel"></div></details></dialog>
+<dialog id="guide-dialog" aria-labelledby="guide-title"><div class="dialog-heading"><h2 id="guide-title">Use this project</h2><button id="close-guide" class="oc-button">Close</button></div><div id="guide-panel"></div></dialog><script type="module" src="/src/main.js"></script></body></html>

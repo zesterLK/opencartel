@@ -5,6 +5,8 @@
 
 - `public/previews/velvet.jpg`: original browser screenshot of the included Velvet application, captured on 22 October 2026. It shows a real directional stroke on the procedural burgundy surface and the application controls. This is an original MIT-licensed runtime capture, not a generated concept. See the project’s `ATTRIBUTION.md` for runtime and font notices.
 
+- `public/previews/small-worlds.webp`: original scene-only browser capture of the included Small Worlds renderer, captured on 22 October 2026 at 1280 × 800. It composites the production studio and city paintings through their actual recursive portals. See the project’s `ATTRIBUTION.md` for AI-assisted artwork provenance and reuse terms.
+
 No third-party reference screenshots, concept images or research materials are bundled in the site.
 
 ## Typography
