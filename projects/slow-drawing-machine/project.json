@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "slug": "slow-drawing-machine",
+  "title": "Slow Drawing Machine",
+  "description": "A patient mechanism draws looping ink lines directly across your screen.",
+  "status": "ready",
+  "technologies": [
+    "JavaScript",
+    "Canvas 2D",
+    "SVG",
+    "Vite"
+  ],
+  "codeLicense": "MIT",
+  "demo": null
+}

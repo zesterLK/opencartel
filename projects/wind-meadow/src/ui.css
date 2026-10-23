@@ -1,0 +1,36 @@
+/* Canonical glass controls; copied into each independent project. */
+.oc-button,.oc-pressed{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:40px;padding:10px 14px;font:400 12px/1.15 Chakra,Arial,sans-serif;color:var(--oc-ink,var(--ink,#29292b));border:1px solid var(--oc-edge,color-mix(in srgb,currentColor 20%,transparent));border-radius:6px;background:linear-gradient(150deg,var(--oc-glass-top,#ffffff30),var(--oc-glass-bottom,#ffffff0d));box-shadow:inset 0 1px 0 #ffffff20;backdrop-filter:blur(16px) saturate(1.15);-webkit-backdrop-filter:blur(16px) saturate(1.15);text-decoration:none;white-space:nowrap;vertical-align:middle}
+.oc-button{cursor:pointer;touch-action:manipulation;transition:border-color .16s,background .16s}
+.oc-button:hover:not(:disabled){border-color:color-mix(in srgb,currentColor 48%,transparent);background:linear-gradient(150deg,var(--oc-glass-hover,#ffffff48),var(--oc-glass-bottom,#ffffff0d))}
+.oc-button:active:not(:disabled),.oc-button[aria-pressed=true],.oc-button[aria-expanded=true],details[open]>summary.oc-button{background:color-mix(in srgb,var(--oc-ink,var(--ink,#29292b)) 12%,var(--oc-glass-bottom,#ffffff0d));border-color:color-mix(in srgb,currentColor 48%,transparent)}
+.oc-pressed{cursor:default;font-weight:400}
+.oc-button:focus-visible,.oc-pressed:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.oc-button:disabled{opacity:.43;cursor:default}
+.oc-masthead.masthead{min-width:0;width:100%;align-self:start;display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap;gap:16px;padding:calc(20px + env(safe-area-inset-top)) calc(24px + env(safe-area-inset-right)) 12px calc(24px + env(safe-area-inset-left))}
+.oc-masthead .masthead-brand{display:flex;align-items:center;flex:0 1 auto;min-width:0;gap:9px}
+.oc-masthead .masthead-actions{display:flex;align-items:center;flex:0 0 auto;flex-wrap:nowrap;width:auto;margin:0;gap:9px}
+.oc-masthead .origin-link.oc-button{width:40px;height:40px;min-height:40px;flex:0 0 40px;padding:0!important}
+.oc-masthead h1.oc-pressed{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;margin:0;font-size:14px;line-height:18px;letter-spacing:0}
+.oc-source-short{display:none}
+@media(max-width:700px){
+ .oc-button,.oc-pressed{min-height:36px;padding:8px 10px;font-size:11px}
+ .oc-masthead.masthead{gap:6px;padding:calc(12px + env(safe-area-inset-top)) calc(12px + env(safe-area-inset-right)) 12px calc(12px + env(safe-area-inset-left))}
+ .oc-masthead .masthead-brand{gap:6px;flex:0 1 auto}
+ .oc-masthead .masthead-actions{gap:5px}
+ .oc-masthead .origin-link.oc-button{width:36px;height:36px;min-height:36px;flex-basis:36px}
+ .oc-masthead .origin-link svg{width:18px;height:18px}
+ .oc-masthead h1.oc-pressed{font-size:12px;line-height:18px;padding:8px}
+ .oc-masthead .masthead-actions .oc-button{padding-inline:8px}
+ .oc-source-long{display:none}.oc-source-short{display:inline}
+}
+@media(prefers-reduced-motion:reduce){.oc-button{transition:none}}
+@media(forced-colors:active){.oc-button,.oc-pressed{color:ButtonText;background:Canvas;border-color:ButtonText;box-shadow:none}.oc-button[aria-pressed=true]{border-color:Highlight;outline:1px solid Highlight}}
+
+/* Keep native selects, with an inset chevron independent of browser chrome. */
+select.oc-button{appearance:none;-webkit-appearance:none;padding-right:28px!important;background-image:var(--oc-select-arrow,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%233b3b40' stroke-width='1.4'%3E%3Cpath d='m2 4 4 4 4-4'/%3E%3C/svg%3E")),linear-gradient(150deg,var(--oc-glass-top,#ffffff30),var(--oc-glass-bottom,#ffffff0d))!important;background-repeat:no-repeat!important;background-position:right 9px center,center!important;background-size:12px 12px,auto!important}
+.oc-masthead .project-github.oc-button{width:40px;padding:0;flex:0 0 40px}.project-github svg{display:block;width:18px;height:18px}
+.oc-scroll-shell{position:relative;min-width:0;isolation:isolate}.oc-scroll-shell::before,.oc-scroll-shell::after{content:"";position:absolute;z-index:3;top:0;bottom:0;width:30px;pointer-events:none;opacity:0;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);background:var(--oc-rail-tint,#ffffff60);transition:opacity .15s}
+.oc-scroll-shell::before{left:0;mask-image:linear-gradient(to right,#000,transparent);-webkit-mask-image:linear-gradient(to right,#000,transparent)}.oc-scroll-shell::after{right:0;mask-image:linear-gradient(to left,#000,transparent);-webkit-mask-image:linear-gradient(to left,#000,transparent)}.oc-scroll-shell.has-before::before,.oc-scroll-shell.has-after::after{opacity:1}
+.oc-scroll-rail{scrollbar-width:thin;scroll-padding-inline:8px}.oc-scroll-rail:focus-visible{outline:1px solid currentColor;outline-offset:2px}
+@media(max-width:700px){.oc-masthead .project-github.oc-button{width:36px;flex-basis:36px}}
+@media(forced-colors:active){.oc-scroll-shell::before,.oc-scroll-shell::after{display:none}select.oc-button{appearance:auto;background-image:none!important}}

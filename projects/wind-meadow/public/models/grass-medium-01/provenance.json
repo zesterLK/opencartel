@@ -1,0 +1,44 @@
+{
+  "asset": "Grass Medium 01",
+  "source": "https://polyhaven.com/a/grass_medium_01",
+  "license": "CC0 1.0",
+  "license_url": "https://polyhaven.com/license",
+  "authors": {
+    "Rob Tuytel": "Photography",
+    "Rico Cilliers": "Modeling"
+  },
+  "files": [
+    {
+      "file": "textures/grass_medium_01_nor_gl_1k.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/grass_medium_01/grass_medium_01_nor_gl_1k.jpg",
+      "md5": "fcf43dd1253f56e4c361079f34155c37",
+      "bytes": 956166
+    },
+    {
+      "file": "textures/grass_medium_01_diff_1k.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/grass_medium_01/grass_medium_01_diff_1k.jpg",
+      "md5": "6b18ed50d776fd20c1304d9994bd764e",
+      "bytes": 395673
+    },
+    {
+      "file": "textures/grass_medium_01_arm_1k.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/grass_medium_01/grass_medium_01_arm_1k.jpg",
+      "md5": "37ed2730a507b681af2e9f9f7ef3ae5e",
+      "bytes": 679518
+    },
+    {
+      "file": "grass_medium_01.bin",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/grass_medium_01/grass_medium_01.bin",
+      "md5": "e0527a0561c2dae5b7b5c1b478d8c6bf",
+      "bytes": 1006632
+    },
+    {
+      "file": "textures/grass_medium_01_alpha_1k.png",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/grass_medium_01/grass_medium_01_alpha_1k.png",
+      "md5": "6b5b251ef1ca9a69ab9f49def66d758a",
+      "bytes": 648718
+    }
+  ],
+  "gltf_md5": "28dd8247f3faa749bf87a0b84be01e7e",
+  "modifications": "Original glTF and assets unchanged; runtime selects and instances several original tuft variants, retaining their modeled curvature and UVs. The separately supplied original opacity atlas is bound with unflipped glTF UVs and a 0.5 alpha cutoff in both colour and shadow passes."
+}

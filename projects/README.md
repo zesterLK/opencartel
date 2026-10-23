@@ -2,6 +2,9 @@
 
 ## Available projects
 
+- [Wind Meadow](wind-meadow/) — A procedural field of curved grass with travelling gusts, lighting and detail controls. Source and standalone downloads included; public demo verification pending.
+- [Slow Drawing Machine](slow-drawing-machine/) — An articulated mechanism draws across the whole screen with adjustable rhythm, colour and SVG export. Source and standalone downloads included; public demo verification pending.
+
 - [Small Worlds](small-worlds/) — A reversible illustrated journey through an artist’s studio, its postcard city and back again. Includes portrait artwork, touch and keyboard controls, optional playback and standalone source. [Public demo](https://opencartel.tech/small-worlds/).
 
 - [Words Have Weight](words-have-weight/) — An interactive typography playground with six physical word behaviours. Source, standalone setup, tests, and asset credits are included. Ready for local use; [public demo](https://opencartel.tech/words-have-weight/).

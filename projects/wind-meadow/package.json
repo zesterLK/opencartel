@@ -1,0 +1,27 @@
+{
+  "name": "wind-meadow",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A living field of curved grass, travelling wind and sunlight.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "source": "node scripts/source-archive.mjs",
+    "predev": "npm run source",
+    "dev": "vite --host 127.0.0.1 --port 4190 --strictPort",
+    "prebuild": "npm run source",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4190 --strictPort",
+    "check": "node --check src/main.js && node --check src/meadow.js && node --check src/shaders.js"
+  },
+  "dependencies": {
+    "three": "0.185.0"
+  },
+  "devDependencies": {
+    "fflate": "0.8.3",
+    "vite": "8.3.4"
+  }
+}

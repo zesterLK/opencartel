@@ -28,7 +28,7 @@
           <button class="search-toggle oc-button" id="search-toggle" type="button" aria-label="Search projects" aria-expanded="false" aria-controls="project-search"><svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.3"/><path d="m13 13 4 4" stroke="currentColor" stroke-width="1.3"/></svg></button>
           <input id="project-search" type="search" aria-label="Search projects" placeholder="Search projects" autocomplete="off" tabindex="-1" inert />
         </div>
-        <label class="sr-only" for="project-filter">Filter projects</label><select class="oc-button" id="project-filter"><option value="all">All projects</option><option value="typography">Typography</option><option value="3d">3D scenes</option><option value="material">Materials</option><option value="illustration">Illustrated worlds</option></select>
+        <label class="sr-only" for="project-filter">Filter projects</label><select class="oc-button" id="project-filter"><option value="all">All projects</option><option value="typography">Typography</option><option value="3d">3D scenes</option><option value="material">Materials</option><option value="illustration">Illustrated worlds</option><option value="drawing">Drawing</option></select>
       </div>
       <div class="collection-actions">
         <a class="oc-button" href="https://github.com/zesterLK/opencartel" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><svg class="github-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 5v-4c0-1-.2-2-1-2 3-.3 6-1.4 6-6a5 5 0 0 0-1-3 5 5 0 0 0-.1-4s-1-.3-4 1a14 14 0 0 0-7 0C5 2.7 4 3 4 3a5 5 0 0 0-.1 4 5 5 0 0 0-1 3c0 4.6 3 5.7 6 6-.8.6-1 1.5-1 2v4"/></svg><span class="github-label">GitHub</span></a>
@@ -37,8 +37,24 @@
       </div>
     </section>
     <section id="projects" class="project-collection" aria-label="Projects">
-      <p class="sr-only" id="collection-status" role="status">4 projects</p>
+      <p class="sr-only" id="collection-status" role="status">6 projects</p>
       <div class="project-grid" id="project-grid">
+        <article class="project" aria-labelledby="wind-meadow-title" data-project="wind-meadow" data-category="3d" data-search="grass meadow wind nature plants flowers sunlight gust">
+          <a class="project-card" href="/wind-meadow/" aria-labelledby="wind-meadow-title" aria-describedby="wind-meadow-description" data-cursor="project">
+            <div class="project-frame"><div class="project-media">
+              <video class="project-video" muted loop playsinline preload="metadata" poster="/previews/wind-meadow.webp" aria-hidden="true" tabindex="-1"><source src="/previews/wind-meadow.webm" type="video/webm" /></video>
+            </div></div>
+            <div class="project-caption"><h3 id="wind-meadow-title">Wind Meadow</h3><p id="wind-meadow-description">Stay a little. Move the air.</p></div>
+          </a>
+        </article>
+        <article class="project" aria-labelledby="slow-drawing-machine-title" data-project="slow-drawing-machine" data-category="drawing" data-search="drawing machine ink harmonograph art canvas svg pen">
+          <a class="project-card" href="/slow-drawing-machine/" aria-labelledby="slow-drawing-machine-title" aria-describedby="slow-drawing-machine-description" data-cursor="project">
+            <div class="project-frame"><div class="project-media">
+              <video class="project-video" muted loop playsinline preload="metadata" poster="/previews/slow-drawing-machine.webp" aria-hidden="true" tabindex="-1"><source src="/previews/slow-drawing-machine.webm" type="video/webm" /></video>
+            </div></div>
+            <div class="project-caption"><h3 id="slow-drawing-machine-title">Slow Drawing Machine</h3><p id="slow-drawing-machine-description">Let it wander.</p></div>
+          </a>
+        </article>
         <article class="project" aria-labelledby="worlds-title" data-project="small-worlds" data-category="illustration" data-search="small worlds illustration city window studio postcard infinite zoom art painting">
           <a class="project-card" href="/small-worlds/" aria-labelledby="worlds-title" aria-describedby="worlds-description" data-cursor="project">
             <div class="project-frame"><div class="project-media">

@@ -1,0 +1,37 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#f4f3ed"><meta name="description" content="A patient mechanism draws looping ink lines across your screen. Change its rhythm, watch, and take the drawing with you."><title>Slow Drawing Machine — OpenCartel</title><link rel="icon" href="data:,"></head><body class="drawing-page"><main class="experience">
+<canvas id="ink" role="img" aria-label="An evolving ink drawing" aria-describedby="drawing-instructions"></canvas><canvas id="mechanism" aria-hidden="true"></canvas><button id="pen-handle" class="pen-handle" data-cursor="grab" data-cursor-label="move pen" aria-label="Move pen" aria-describedby="pen-instructions" aria-pressed="false"></button><span id="pen-instructions" class="sr-only">Drag the pen to place it. With keyboard, press Enter to lift or place, use arrow keys to move, Shift for larger steps, and Escape to cancel.</span><p id="drawing-instructions" class="sr-only">A mechanism draws automatically. Pattern changes the shape and starts a fresh drawing. Tune adjusts frequencies, damping, speed and ink. Pause stops the machine. Clear restarts the current drawing. Save SVG downloads the drawn lines without the mechanism.</p>
+    <header class="masthead oc-masthead">
+      <div class="masthead-brand">
+        <a id="origin-link" class="origin-link oc-button" aria-label="Home" title="Home" data-cursor-label="go home" hidden>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z" /></svg>
+        </a>
+        <h1 class="oc-pressed" title="Slow Drawing Machine">Slow Drawing Machine</h1>
+      </div>
+      <nav class="masthead-actions" aria-label="Project information">
+        <button id="info-button" class="oc-button" type="button" aria-haspopup="dialog" aria-controls="info-dialog" data-cursor-label="get help">Help</button>
+        <button id="guide-button" class="oc-button" type="button" aria-haspopup="dialog" aria-controls="guide-dialog" data-cursor-label="read guide">Guide</button>
+        <a id="source-download" class="oc-button" download="slow-drawing-machine-source.zip" data-cursor-label="download source" aria-label="Download source"><span class="oc-source-long">Download source</span><span class="oc-source-short" aria-hidden="true">Source</span></a>
+        <a class="oc-button project-github" href="https://github.com/zesterLK/opencartel/tree/main/projects/slow-drawing-machine" target="_blank" rel="noopener noreferrer" aria-label="View project on GitHub" title="View project on GitHub"><svg class="github-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 5v-4c0-1-.2-2-1-2 3-.3 6-1.4 6-6a5 5 0 0 0-1-3 5 5 0 0 0-.1-4s-1-.3-4 1a14 14 0 0 0-7 0C5 2.7 4 3 4 3a5 5 0 0 0-.1 4 5 5 0 0 0-1 3c0 4.6 3 5.7 6 6-.8.6-1 1.5-1 2v4"/></svg></a>
+      </nav>
+    </header>
+
+
+<footer class="surface-controls"><p id="drawing-status" class="gesture-hint" role="status">Pick up the pen. Let it wander.</p><div class="controls-rail"><div class="material-controls">
+<label class="sr-only" for="pattern">Drawing pattern</label><select id="pattern" class="oc-button"><option value="orbit">Orbit</option><option value="bloom" selected>Bloom</option><option value="weave">Weave</option></select>
+<details id="tune"><summary class="oc-button">Tune</summary><div class="tune-panel">
+<label for="frequency-x">Horizontal rhythm <output id="frequency-x-value">2</output></label><input id="frequency-x" type="range" min="1" max="5" step="0.01" value="2">
+<label for="frequency-y">Vertical rhythm <output id="frequency-y-value">2.01</output></label><input id="frequency-y" type="range" min="1" max="5" step="0.01" value="2.01">
+<label for="decay">Damping <output id="decay-value">0.15%</output></label><input id="decay" type="range" min="0" max="10" step="0.1" value="1.5">
+<label for="speed">Drawing speed <output id="speed-value">0.25×</output></label><input id="speed" type="range" min="25" max="1000" step="25" value="25">
+<label for="ink-color">Ink</label><select id="ink-color" class="oc-button"><option value="#345f9d">Cobalt</option><option value="#a24232">Oxblood</option><option value="#2d3939">Graphite</option></select>
+<label class="check"><input id="show-machine" type="checkbox" checked> Show mechanism</label>
+<p class="panel-note">Rhythm and damping changes lift the pen and begin a new stroke. Existing ink stays.</p></div></details>
+<button id="pause" class="oc-button" aria-pressed="false">Pause</button><button id="clear" class="oc-button">Clear</button><button id="save" class="oc-button">Save SVG</button></div></div></footer>
+<p id="announcement" class="sr-only" role="status" aria-live="polite"></p><section id="fallback" class="fallback" hidden><h2>The canvas could not start.</h2><p>Try a browser with Canvas support. The guide and source remain available.</p></section></main>
+<dialog id="info-dialog" aria-labelledby="info-title"><div class="dialog-heading"><h2 id="info-title">Leave a little to chance.</h2><button id="close-info" class="oc-button">Close</button></div><p>Two linked arms guide one pen. The screen is the canvas. Let a line build, then change the rhythm and see where it goes.</p><p>Orbit, Bloom and Weave begin fresh drawings. Tune changes the rhythm or ink and starts a separate stroke, so it never connects distant points with an accidental line. Drag the pen to place it anywhere; it lifts without marking the canvas, then continues from the new position. Speed starts at 0.25× and goes up to 10×. Clear starts again.</p><p>Save SVG keeps the exact drawn lines as editable vectors, without the mechanism. Nothing is uploaded. Drawings live only in this tab until you save them.</p><p>This is a harmonograph-inspired path with a kinematic mechanism, not a physical pendulum simulation. Reduced motion starts paused. Drawings stop at the point limit to keep the page responsive.</p><details id="third-party-notices"><summary>Third-party notices</summary><div id="notices-panel"></div></details></dialog>
+  <dialog id="guide-dialog" class="guide-dialog" aria-labelledby="guide-title">
+    <div class="dialog-heading"><h2 id="guide-title">Use this project</h2><button id="close-guide" class="oc-button" type="button" aria-label="Close guide">Close</button></div>
+    <p class="guide-intro">The guide for you and your agent.</p>
+    <div id="guide-panel"></div>
+  </dialog>
+<script type="module" src="/src/main.js"></script></body></html>

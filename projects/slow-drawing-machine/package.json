@@ -1,0 +1,25 @@
+{
+  "name": "slow-drawing-machine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A patient mechanism draws looping ink lines directly across your screen.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "source": "node scripts/source-archive.mjs",
+    "predev": "npm run source",
+    "dev": "vite --host 127.0.0.1 --port 4191 --strictPort",
+    "prebuild": "npm run source",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4191 --strictPort",
+    "check": "node --check src/main.js && node --check src/machine.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "devDependencies": {
+    "fflate": "0.8.3",
+    "vite": "8.3.4"
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "asset": "Grass Medium 01",
+  "asset_page": "https://polyhaven.com/a/grass_medium_01",
+  "license": "CC0 1.0",
+  "license_page": "https://polyhaven.com/license",
+  "authors": {
+    "Rob Tuytel": "Photography",
+    "Rico Cilliers": "Modeling"
+  },
+  "source_size": [
+    2048,
+    2048
+  ],
+  "source_md5": {
+    "grass_medium_01_diff_2k.jpg": "000814eb2149add70695cf71bfb52c4b",
+    "grass_medium_01_alpha_2k.png": "0810166131307c1094d37e73a8490542"
+  },
+  "output": "grass-blade-albedo.png",
+  "output_mode": "RGB",
+  "output_dimensions": [
+    256,
+    512
+  ],
+  "output_bytes": 81592,
+  "output_sha256": "726cd4bc7864d6e9b07693396156d78f273bd0d2aff49ebe7f6d0538c2e34380",
+  "processing": "Bilinear sampling of four safe blade interiors; straightening and repacking only; no repainting, relighting, alpha cutting, or procedural colour.",
+  "tracks": [
+    {
+      "id": "A",
+      "knots": [
+        [
+          500,
+          1496,
+          3
+        ],
+        [
+          600,
+          1501,
+          5
+        ],
+        [
+          750,
+          1498,
+          6
+        ],
+        [
+          900,
+          1493,
+          4
+        ],
+        [
+          1050,
+          1490,
+          2
+        ]
+      ]
+    },
+    {
+      "id": "B",
+      "knots": [
+        [
+          500,
+          1556,
+          5
+        ],
+        [
+          600,
+          1555,
+          5
+        ],
+        [
+          750,
+          1552,
+          4
+        ],
+        [
+          825,
+          1548,
+          4
+        ],
+        [
+          900,
+          1546,
+          3
+        ],
+        [
+          975,
+          1546,
+          2
+        ],
+        [
+          1050,
+          1539,
+          2
+        ]
+      ]
+    },
+    {
+      "id": "C",
+      "knots": [
+        [
+          500,
+          1671,
+          6
+        ],
+        [
+          600,
+          1668,
+          5
+        ],
+        [
+          750,
+          1658,
+          6
+        ],
+        [
+          900,
+          1659,
+          6
+        ],
+        [
+          1050,
+          1659,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "D",
+      "knots": [
+        [
+          500,
+          1704,
+          6
+        ],
+        [
+          600,
+          1705,
+          5
+        ],
+        [
+          750,
+          1707,
+          6
+        ],
+        [
+          900,
+          1707,
+          5
+        ],
+        [
+          1050,
+          1708,
+          3
+        ]
+      ]
+    }
+  ],
+  "minimum_sampled_source_alpha": [
+    0.9478961372647698,
+    0.974524721858809,
+    0.9669145555463123,
+    0.9205920500495918
+  ],
+  "layout": {
+    "variants_left_to_right": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "tile_width": 64,
+    "horizontal_padding_pixels": 4,
+    "image_top": "tip-side of body segment (source y=1050)",
+    "image_bottom": "root-side of body segment (source y=500)"
+  },
+  "uv": {
+    "assumes": "TextureLoader flipY=true; mesh u=0..1 width; v=0 root to 1 tip",
+    "formula": "vec2((variant*64.0 + 4.5 + clamp(u,0.0,1.0)*55.0)/256.0, (0.5 + clamp(v,0.0,1.0)*511.0)/512.0)",
+    "v_range": [
+      0.0009765625,
+      0.9990234375
+    ],
+    "u_ranges": [
+      [
+        0.017578125,
+        0.232421875
+      ],
+      [
+        0.267578125,
+        0.482421875
+      ],
+      [
+        0.517578125,
+        0.732421875
+      ],
+      [
+        0.767578125,
+        0.982421875
+      ]
+    ],
+    "color_space": "SRGBColorSpace",
+    "recommended_min_filter": "LinearFilter (no mipmaps for first material comparison)",
+    "recommended_mag_filter": "LinearFilter",
+    "wrapping": "ClampToEdgeWrapping",
+    "generateMipmaps": false
+  },
+  "limitations": [
+    "Body interiors, not the original whole-blade silhouette.",
+    "Upsampling preserves source detail and does not invent more.",
+    "No runtime appearance or performance has been checked.",
+    "OpenGL normal source retained privately, not repacked or bound; requires matching tangent basis and orientation."
+  ],
+  "source_urls": {
+    "grass_medium_01_alpha_2k.png": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/grass_medium_01/grass_medium_01_alpha_2k.png",
+    "grass_medium_01_diff_2k.jpg": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/grass_medium_01/grass_medium_01_diff_2k.jpg"
+  }
+}

@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#213321"><meta name="description" content="A living field of grass. Send a breeze through it, change the light, and stay a while."><title>Wind Meadow — OpenCartel</title><link rel="icon" href="data:,"></head><body class="meadow-page"><main class="experience">
+<canvas id="meadow" tabindex="0" role="img" aria-label="Living meadow" aria-describedby="canvas-instructions"></canvas>
+<p id="canvas-instructions" class="sr-only">Drag across the meadow to part the grass outward on both sides of your stroke. Use Send gust for a keyboard-accessible breeze. Pause freezes the field. Effects changes wind, speed, sunlight, flowers and quality.</p>
+    <header class="masthead oc-masthead">
+      <div class="masthead-brand">
+        <a id="origin-link" class="origin-link oc-button" aria-label="Home" title="Home" data-cursor-label="go home" hidden>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z" /></svg>
+        </a>
+        <h1 class="oc-pressed" title="Wind Meadow">Wind Meadow</h1>
+      </div>
+      <nav class="masthead-actions" aria-label="Project information">
+        <button id="info-button" class="oc-button" type="button" aria-haspopup="dialog" aria-controls="info-dialog" data-cursor-label="get help">Help</button>
+        <button id="guide-button" class="oc-button" type="button" aria-haspopup="dialog" aria-controls="guide-dialog" data-cursor-label="read guide">Guide</button>
+        <a id="source-download" class="oc-button" download="wind-meadow-source.zip" data-cursor-label="download source" aria-label="Download source"><span class="oc-source-long">Download source</span><span class="oc-source-short" aria-hidden="true">Source</span></a>
+        <a class="oc-button project-github" href="https://github.com/zesterLK/opencartel/tree/main/projects/wind-meadow" target="_blank" rel="noopener noreferrer" aria-label="View project on GitHub" title="View project on GitHub"><svg class="github-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 5v-4c0-1-.2-2-1-2 3-.3 6-1.4 6-6a5 5 0 0 0-1-3 5 5 0 0 0-.1-4s-1-.3-4 1a14 14 0 0 0-7 0C5 2.7 4 3 4 3a5 5 0 0 0-.1 4 5 5 0 0 0-1 3c0 4.6 3 5.7 6 6-.8.6-1 1.5-1 2v4"/></svg></a>
+      </nav>
+    </header>
+
+<div id="loading" class="loading" role="status"><span id="load-label">Planting the meadow…</span><progress id="load-progress" max="100" value="0" aria-label="Loading meadow"></progress></div>
+<section id="fallback" class="fallback" hidden><h2>The meadow needs a graphics connection.</h2><p id="error-message">Try again, or enable hardware acceleration in your browser.</p><button class="oc-button" id="retry-button">Try again</button></section>
+<footer class="surface-controls"><p class="gesture-hint">Stay a little. Move the air.</p><div class="material-controls"><details id="effects"><summary class="oc-button">Effects</summary><div class="effects-panel">
+<label for="wind">Wind strength <output id="wind-value">70%</output></label><input id="wind" type="range" min="0" max="200" value="70">
+<label for="speed">Wind speed <output id="speed-value">1×</output></label><input id="speed" type="range" min="25" max="200" value="100">
+<label for="light">Sunlight</label><select id="light" class="oc-button"><option value="golden">Golden hour</option><option value="daylight">Daylight</option><option value="dusk">Blue hour</option></select>
+<label class="check"><input id="flowers" type="checkbox" checked> Wildflowers</label>
+<label for="quality">Detail</label><select id="quality" class="oc-button"><option value="auto">Adaptive</option><option value="high">Rich</option><option value="low">Light</option></select>
+<button id="reset" class="oc-button">Reset effects</button></div></details><button class="oc-button" id="gust">Send gust</button><button class="oc-button" id="pause" aria-pressed="false">Pause</button></div></footer>
+<p id="announcement" class="sr-only" role="status" aria-live="polite"></p></main>
+<dialog id="info-dialog" aria-labelledby="info-title"><div class="dialog-heading"><h2 id="info-title">A little wind.</h2><button id="close-info" class="oc-button">Close</button></div><p>Drag through the grass or send a gust. Every blade bends from its root and rises again.</p><p>Effects lets you change the wind, its pace and the sunlight. Adaptive detail balances the scene with your browser. Light uses fewer blades; Rich asks more of your graphics hardware.</p><p>Pause stops the wind. Reduced motion starts still; choose Play when you want motion. All effects are local, procedural and approximate nature.</p><details id="third-party-notices"><summary>Third-party notices</summary><div id="notices-panel"></div></details></dialog>
+  <dialog id="guide-dialog" class="guide-dialog" aria-labelledby="guide-title">
+    <div class="dialog-heading"><h2 id="guide-title">Use this project</h2><button id="close-guide" class="oc-button" type="button" aria-label="Close guide">Close</button></div>
+    <p class="guide-intro">The guide for you and your agent.</p>
+    <div id="guide-panel"></div>
+  </dialog>
+<script type="module" src="/src/main.js"></script></body></html>

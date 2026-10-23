@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "slug": "wind-meadow",
+  "title": "Wind Meadow",
+  "description": "Send a breeze through a living field of grass and change its light.",
+  "status": "ready",
+  "technologies": [
+    "JavaScript",
+    "Three.js",
+    "WebGL",
+    "Vite"
+  ],
+  "codeLicense": "MIT",
+  "demo": null
+}
