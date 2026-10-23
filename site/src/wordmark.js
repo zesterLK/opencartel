@@ -24,7 +24,8 @@ const palettes = [
   { name: 'pink', canvas: '#efc1db', ink: '#302036' },
   { name: 'ink', canvas: '#23221f', ink: '#f2efe4' },
 ];
-let palette = 0;
+const defaultPalette = palettes.findIndex(theme => theme.name === 'forest');
+let palette = defaultPalette;
 let selected = 4;
 let slots = [];
 let width = 0;
@@ -187,7 +188,7 @@ button.addEventListener('click', event => {
 button.addEventListener('focus', () => { if (button.matches(':focus-visible')) button.classList.add('is-keyboard'); });
 button.addEventListener('blur', () => button.classList.remove('is-keyboard'));
 button.addEventListener('keydown', event => {
-  if (event.key === 'Escape') { cancelMotion(); setPalette(0); scheduleIdle(); return; }
+  if (event.key === 'Escape') { cancelMotion(); setPalette(defaultPalette); scheduleIdle(); return; }
   if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
   event.preventDefault();
   button.classList.add('is-keyboard');

@@ -15,6 +15,21 @@ const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const dialog = document.querySelector('#license-dialog');
 const licenseButton = document.querySelector('#license-button');
 const projects = [...document.querySelectorAll('.project')];
+const metadata = Object.values(import.meta.glob('../../projects/*/project.json', { eager: true, import: 'default' }));
+for (const project of projects) {
+  const record = metadata.find(item => item.slug === project.dataset.project);
+  const tags = record?.tags || [];
+  const list = document.createElement('ul');
+  list.className = 'project-tags';
+  list.setAttribute('aria-label', 'Project tags');
+  for (const tag of tags) {
+    const item = document.createElement('li');
+    item.textContent = tag;
+    list.append(item);
+  }
+  project.querySelector('.project-caption').append(list);
+  project.dataset.search = [project.dataset.search, record?.title, ...tags].join(' ').toLowerCase();
+}
 const search = document.querySelector('#project-search');
 const searchControl = document.querySelector('#search-control');
 const searchToggle = document.querySelector('#search-toggle');

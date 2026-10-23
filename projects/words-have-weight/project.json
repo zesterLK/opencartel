@@ -11,5 +11,10 @@
     "Vite"
   ],
   "codeLicense": "MIT",
-  "demo": "https://opencartel.tech/words-have-weight/"
+  "demo": "https://opencartel.tech/words-have-weight/",
+  "tags": [
+    "typography",
+    "physics",
+    "svg"
+  ]
 }

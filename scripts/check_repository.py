@@ -17,7 +17,7 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_FIELDS = {
     "schemaVersion", "slug", "title", "description", "status",
-    "technologies", "codeLicense", "demo",
+    "technologies", "codeLicense", "demo", "tags",
 }
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 SENSITIVE_SUFFIXES = {".pem", ".key", ".p12", ".pfx"}
@@ -73,6 +73,14 @@ def check_metadata(directory, errors):
         not isinstance(item, str) or not item.strip() for item in technologies
     ):
         errors.append(f"{label}: technologies must be an array of nonempty strings")
+    tags = data.get("tags")
+    if not isinstance(tags, list) or any(
+        not isinstance(tag, str) or not tag.strip() or tag != tag.lower() or len(tag) > 24
+        for tag in tags
+    ):
+        errors.append(f"{label}: tags must be lowercase labels of 1 to 24 characters")
+    elif len(tags) != len(set(tags)):
+        errors.append(f"{label}: tags must be unique")
     if data.get("codeLicense") != "MIT":
         errors.append(f"{label}: original codeLicense must be MIT")
     demo = data.get("demo")

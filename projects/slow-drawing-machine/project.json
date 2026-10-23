@@ -11,5 +11,11 @@
     "Vite"
   ],
   "codeLicense": "MIT",
-  "demo": null
+  "demo": "https://opencartel.tech/slow-drawing-machine/",
+  "tags": [
+    "generative art",
+    "canvas 2d",
+    "drawing",
+    "svg"
+  ]
 }

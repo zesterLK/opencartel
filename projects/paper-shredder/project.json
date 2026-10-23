@@ -12,5 +12,10 @@
     "Vite"
   ],
   "codeLicense": "MIT",
-  "demo": "https://opencartel.tech/paper-shredder/"
+  "demo": "https://opencartel.tech/paper-shredder/",
+  "tags": [
+    "three.js",
+    "blender",
+    "3d scene"
+  ]
 }

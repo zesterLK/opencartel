@@ -10,5 +10,10 @@
     "Vite"
   ],
   "codeLicense": "MIT",
-  "demo": "https://opencartel.tech/small-worlds/"
+  "demo": "https://opencartel.tech/small-worlds/",
+  "tags": [
+    "illustration",
+    "canvas 2d",
+    "infinite zoom"
+  ]
 }

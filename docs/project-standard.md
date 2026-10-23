@@ -73,6 +73,7 @@ Words Have Weight supports `node scripts/source-archive.mjs --verify` after inst
 | `title` | Short display title. |
 | `description` | One sentence explaining the actual experience. |
 | `status` | `in-progress`, `ready`, or `archived`. `ready` means the release requirements below were completed. |
+| `tags` | Short, unique lowercase classification labels, rendered and searchable in the catalog. Prefer 3–4 useful labels; maximum 24 characters each. |
 | `technologies` | Array of relevant technologies; empty while the stack is undecided. |
 | `codeLicense` | `MIT` for original project code. Third-party exceptions belong in `ATTRIBUTION.md`. |
 | `demo` | Verified public HTTPS preview URL, or `null` when none exists. |

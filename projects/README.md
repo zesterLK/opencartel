@@ -2,8 +2,8 @@
 
 ## Available projects
 
-- [Wind Meadow](wind-meadow/) — A procedural field of curved grass with travelling gusts, lighting and detail controls. Source and standalone downloads included; public demo verification pending.
-- [Slow Drawing Machine](slow-drawing-machine/) — An articulated mechanism draws across the whole screen with adjustable rhythm, colour and SVG export. Source and standalone downloads included; public demo verification pending.
+- [Wind Meadow](wind-meadow/) — A procedural field of curved grass with travelling gusts, lighting and detail controls. Source and standalone downloads included; [public demo](https://opencartel.tech/wind-meadow/).
+- [Slow Drawing Machine](slow-drawing-machine/) — An articulated mechanism draws across the whole screen with adjustable rhythm, colour and SVG export. Source and standalone downloads included; [public demo](https://opencartel.tech/slow-drawing-machine/).
 
 - [Small Worlds](small-worlds/) — A reversible illustrated journey through an artist’s studio, its postcard city and back again. Includes portrait artwork, touch and keyboard controls, optional playback and standalone source. [Public demo](https://opencartel.tech/small-worlds/).
 

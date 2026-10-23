@@ -11,5 +11,10 @@
     "Vite"
   ],
   "codeLicense": "MIT",
-  "demo": "https://opencartel.tech/velvet/"
+  "demo": "https://opencartel.tech/velvet/",
+  "tags": [
+    "material",
+    "three.js",
+    "webgl"
+  ]
 }

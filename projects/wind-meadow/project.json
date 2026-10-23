@@ -11,5 +11,11 @@
     "Vite"
   ],
   "codeLicense": "MIT",
-  "demo": null
+  "demo": "https://opencartel.tech/wind-meadow/",
+  "tags": [
+    "nature",
+    "three.js",
+    "webgl",
+    "interactive"
+  ]
 }
