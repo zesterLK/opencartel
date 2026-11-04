@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "slug": "small-worlds",
   "title": "Small Worlds",
-  "description": "Travel through a painted studio and its postcard, then find yourself inside again.",
+  "description": "A continuous zoom through a painted studio and postcard.",
   "status": "ready",
   "technologies": [
     "JavaScript",

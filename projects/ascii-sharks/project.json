@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "slug": "ascii-sharks",
   "title": "ASCII Sharks",
-  "description": "An ocean drawn one character at a time.",
+  "description": "Animated ASCII sharks that respond to pointer movement.",
   "status": "ready",
   "technologies": [
     "JavaScript",

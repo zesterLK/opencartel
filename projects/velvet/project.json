@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "slug": "velvet",
   "title": "Velvet",
-  "description": "Brush a velvet surface to leave directional strokes, then turn the light to change their sheen.",
+  "description": "An interactive velvet surface with brush strokes and adjustable lighting.",
   "status": "ready",
   "technologies": [
     "JavaScript",

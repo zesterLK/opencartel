@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "slug": "wind-meadow",
   "title": "Wind Meadow",
-  "description": "Send a breeze through a living field of grass and change its light.",
+  "description": "Interactive grass with adjustable wind and lighting.",
   "status": "ready",
   "technologies": [
     "JavaScript",

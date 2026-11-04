@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "slug": "jitter-clock",
   "title": "Jitter Clock",
-  "description": "A clean digit unwinds into a restless loop of ink.",
+  "description": "An outline clock with animated curls and adjustable playback speed.",
   "status": "ready",
   "technologies": [
     "Canvas 2D",

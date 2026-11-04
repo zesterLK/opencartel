@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "slug": "pocket-cards",
   "title": "Pocket Cards",
-  "description": "A small wallet. Pick a card, take a closer look, and tuck it away.",
+  "description": "Interactive stacked cards that slide out of a translucent wallet.",
   "status": "ready",
   "technologies": [
     "JavaScript",

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "slug": "morphing-code-input",
   "title": "Morphing Code Input",
-  "description": "A quiet pill unfolds into a tactile six-digit code input.",
+  "description": "An expandable six-digit code input with animated feedback.",
   "status": "ready",
   "technologies": [
     "JavaScript",

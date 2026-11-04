@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "slug": "words-have-weight",
   "title": "Words have weight",
-  "description": "An interactive typography playground with six physical word behaviours.",
+  "description": "Interactive text with six physics-based effects.",
   "status": "ready",
   "technologies": [
     "TypeScript",

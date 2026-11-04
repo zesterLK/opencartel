@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "slug": "gradient-motion",
   "title": "Gradient Motion",
-  "description": "A luminous membrane transforms into an ember, a flowing colour field and an orbit of light.",
+  "description": "Animated gradients with four selectable visual effects.",
   "status": "ready",
   "tags": [
     "shader",

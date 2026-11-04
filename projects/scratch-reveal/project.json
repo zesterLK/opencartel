@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "slug": "scratch-reveal",
   "title": "Scratch Reveal",
-  "description": "A little anticipation. Scratch the silver to reveal your gift.",
+  "description": "A gift card with a scratch-off layer that reveals a code.",
   "status": "ready",
   "technologies": [
     "JavaScript",

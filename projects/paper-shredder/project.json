@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "slug": "paper-shredder",
   "title": "Paper Shredder",
-  "description": "Shred local documents in an illustrated office. Explore the room, queue more paper and control the pace.",
+  "description": "A virtual paper shredder for local files, with speed and queue controls.",
   "status": "ready",
   "technologies": [
     "Three.js",

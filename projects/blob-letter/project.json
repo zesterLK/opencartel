@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "slug": "blob-letter",
   "title": "Blob Letter",
-  "description": "A letter that moves like ink.",
+  "description": "An interactive letter that deforms with pointer movement.",
   "status": "ready",
   "technologies": [
     "JavaScript",
