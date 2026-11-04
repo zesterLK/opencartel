@@ -9,3 +9,6 @@ The path system, inverse kinematics integration, Canvas mechanism artwork, inter
 The interface helper files are deliberate project-owned copies of OpenCartel's MIT-licensed navigation, cursor, motion and source panel. Vite and fflate are development dependencies with their package-distributed licenses.
 
 Mathematical background: [Harmonograph, UCSC](https://ucscphysicsdemo.sites.ucsc.edu/harmonograph/) and [Robotic Systems: inverse kinematics](https://motion.cs.illinois.edu/RoboticSystems/InverseKinematics.html). These are formula/reference sources, not copied implementation or assets. SVG uses the [W3C path format](https://www.w3.org/TR/SVG2/paths.html).
+
+## Anybody typeface
+Anybody by Etcetera Type Company, bundled unmodified under the SIL Open Font License 1.1. Source: https://github.com/Etcetera-Type-Co/Anybody . License: `public/fonts/Anybody-OFL.txt`. Used for interface typography.

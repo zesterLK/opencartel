@@ -20,3 +20,6 @@ Vite and fflate are development/build dependencies recorded in the manifest and 
 [Jérémie Piellard's fur experiment](https://piellardj.github.io/fur-threejs/) informed the general idea of brushing a rendered fibre surface. Its source, models and textures are not copied or redistributed. Velvet uses a flat, short-pile directional material rather than that demonstration's long fur-covered objects.
 
 References are inspiration, not a claim that third-party assets are licensed for this package. All runtime assets included here are listed above.
+
+## Anybody typeface
+Anybody by Etcetera Type Company, bundled unmodified under the SIL Open Font License 1.1. Source: https://github.com/Etcetera-Type-Co/Anybody . License: `public/fonts/Anybody-OFL.txt`. Used for interface typography.

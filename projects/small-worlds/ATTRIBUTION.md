@@ -13,3 +13,6 @@ Chakra Petch by Cadson Demak, Google Fonts, SIL Open Font License 1.1. Source: h
 ## Dependencies
 
 Vite (MIT), fflate (MIT). Resolved versions and dependencies are recorded in package-lock.json. No runtime CDN, analytics or remote font requests.
+
+## Anybody typeface
+Anybody by Etcetera Type Company, bundled unmodified under the SIL Open Font License 1.1. Source: https://github.com/Etcetera-Type-Co/Anybody . License: `public/fonts/Anybody-OFL.txt`. Used for interface typography.

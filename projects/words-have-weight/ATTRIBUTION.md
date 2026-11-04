@@ -17,3 +17,6 @@ The controls use unmodified Chakra Petch by Cadson Demak, from the [official Goo
 opentype.js supplies font parsing and outline extraction. Vite and TypeScript provide local development/build tooling. fflate creates the downloadable source archive. Exact versions are recorded through `package.json` and `package-lock.json`; dependencies are installed through npm rather than copied into source. The browser bundle includes opentype.js 1.3.4 and its bundled MIT-licensed dependencies tiny-inflate 1.0.3 and string.prototype.codepointat 0.2.1. Their complete upstream copyright and permission notices are retained in [`public/licenses/THIRD-PARTY-NOTICES.txt`](public/licenses/THIRD-PARTY-NOTICES.txt), deployed with the app, available from Help, and included in every source archive. Preserve this file when redistributing the production build.
 
 No photograph, generated concept image, audio, third-party demo implementation or externally hosted runtime asset is bundled. Original interface and geometry code use the project MIT license.
+
+## Anybody typeface
+Anybody by Etcetera Type Company, bundled unmodified under the SIL Open Font License 1.1. Source: https://github.com/Etcetera-Type-Co/Anybody . License: `public/fonts/Anybody-OFL.txt`. Used for interface typography.

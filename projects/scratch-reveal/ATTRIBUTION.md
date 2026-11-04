@@ -5,3 +5,6 @@ Visual reference: Ayodele (@pixelbyayo), Gift card scratch interaction, curated 
 Code: OpenCartel, MIT (see LICENSE). Standard collection control/cursor/guide code copied from OpenCartel's Velvet project under the same license.
 
 Chakra Petch Regular: Cadson Demak, SIL Open Font License 1.1. License included in public/fonts/ChakraPetch-OFL.txt. Vite is MIT; fflate is MIT, used only to package source archives. No third-party runtime JavaScript dependency.
+
+## Anybody typeface
+Anybody by Etcetera Type Company, bundled unmodified under the SIL Open Font License 1.1. Source: https://github.com/Etcetera-Type-Co/Anybody . License: `public/fonts/Anybody-OFL.txt`. Used for interface typography.

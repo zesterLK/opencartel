@@ -7,3 +7,6 @@ OpenCartel controls, cursor, motion helpers and Markdown panel are reused from t
 Chakra Petch by Cadson Demak is distributed under the SIL Open Font License 1.1. Full notice: `public/fonts/ChakraPetch-OFL.txt`.
 
 Vite is an MIT-licensed development/build dependency. fflate is MIT-licensed and used for source archive generation, not the browser component. Their installed packages retain their notices.
+
+## Anybody typeface
+Anybody by Etcetera Type Company, bundled unmodified under the SIL Open Font License 1.1. Source: https://github.com/Etcetera-Type-Co/Anybody . License: `public/fonts/Anybody-OFL.txt`. Used for interface typography.

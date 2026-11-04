@@ -36,3 +36,6 @@ These package resources are resolved from the pinned dependency during the build
 The library is integrated for canvas page rendering, without PDF viewer scripting or an XFA layer. QuickJS scripting assets are not bundled. Operating-system fonts used to draw text/image-cover furniture are browser fallbacks and are not copied into the project.
 
 `public/licenses/THIRD-PARTY-NOTICES.txt` is available inside Help and in the source download. Retain notices when reusing the project.
+
+## Anybody typeface
+Anybody by Etcetera Type Company, bundled unmodified under the SIL Open Font License 1.1. Source: https://github.com/Etcetera-Type-Co/Anybody . License: `public/fonts/Anybody-OFL.txt`. Used for interface typography.

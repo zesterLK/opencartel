@@ -50,3 +50,18 @@ dialog{background:#fff;color:#111;border:1px solid #ddd;border-radius:8px;width:
 .search-control input::-webkit-search-cancel-button{-webkit-appearance:none;width:12px;height:12px;margin-left:6px;background:var(--ink);cursor:pointer;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='m3 3 6 6m0-6-6 6' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat}
 
 button:focus:not(:focus-visible),a:focus:not(:focus-visible),select:focus:not(:focus-visible){outline:none}
+
+/* Local identity review: a single variable family, emphatic title and readable UI. */
+.intro-inner h1{font-weight:700;letter-spacing:-.045em;font-stretch:105%;line-height:1}
+.intro-statement{font-weight:500;font-size:clamp(22px,2.4vw,48px);line-height:1.2;letter-spacing:-.035em}
+.intro-statement em{font-size:1em;font-weight:500;letter-spacing:inherit}
+.intro-copy{font-size:clamp(16px,1.3vw,25px);line-height:1.5;letter-spacing:-.015em;text-indent:0;margin-top:28px}
+.project-caption h3{font-weight:550;font-size:18px;line-height:1.25}.project-caption p{font-size:14px;line-height:1.45}
+@media(max-width:700px){.intro-statement{font-size:clamp(13px,3.25vw,23px)}.intro-copy{font-size:16px;line-height:1.5}.project-caption h3{font-size:18px;font-weight:550}.project-caption p{font-size:14px;line-height:1.5}}
+
+@media(min-width:701px){.project-tags{margin-top:9px}.project-tags li{font-size:9px;padding:2px 6px}}
+@media(max-width:700px){.intro-copy{font-size:15px;font-weight:400}.intro-statement{font-weight:500}.project-tags li{font-size:10px}}
+
+/* Contrasting weights belong only to the homepage header. */
+.site-wordmark .wordmark-initial{font-weight:700}.site-wordmark .wordmark-rest{font-weight:500}
+.intro-statement em{font-weight:350}

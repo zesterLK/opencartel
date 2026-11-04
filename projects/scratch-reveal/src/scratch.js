@@ -56,7 +56,7 @@ export function mountScratch(container,{threshold=.57,brushSize=27,onReveal=()=>
     const foil=ctx.createLinearGradient(0,0,width,height);[[0,'#b3b4b7'],[.14,'#eceef0'],[.36,'#c7c9cd'],[.55,'#f1f1ee'],[.72,'#c0c3c8'],[1,'#e5e5e6']].forEach(([p,c])=>foil.addColorStop(p,c));ctx.fillStyle=foil;ctx.fillRect(0,0,width,height);
     for(let y=0;y<height;y+=.75){ctx.fillStyle=`rgba(${y%3?'255,255,255':'75,80,90'},${.025+(Math.sin(y*73.1)+1)*.035})`;ctx.fillRect(0,y,width,.35);}
     for(let i=0;i<Math.round(width*height*.2);i++){const x=noise(i,1)*width,y=noise(i,2)*height;ctx.fillStyle=i%2?'#ffffff35':'#58606a22';ctx.fillRect(x,y,.35+noise(i,3),.35+noise(i,4));}
-    ctx.font=`${Math.max(12,Math.min(14,width/27))}px Arial`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#65666a';ctx.fillText('Scratch here',width/2,height/2);
+    ctx.font=`${Math.max(12,Math.min(14,width/27))}px Anybody, Arial`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#65666a';ctx.fillText('Scratch here',width/2,height/2);
     coverage.clear();for(const s of strokes){const a={x:s.a.x*width,y:s.a.y*height},b={x:s.b.x*width,y:s.b.y*height};erase(a,b,s.r*width,s.seed);coverage.stroke(a,b,s.r*width*.82,width,height);}
   }
   function reveal(){if(revealed||destroyed)return;revealed=true;pointer=null;canvas.classList.add('revealed');container.dataset.revealed='true';onReveal();}

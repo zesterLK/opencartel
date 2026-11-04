@@ -20,3 +20,6 @@ Vite and fflate are development/build dependencies recorded in the manifest and 
 ## Implementation references
 
 [Al-Ro's grass](https://al-ro.github.io/projects/grass/) and [Álvaro Saburido's grass article](https://alvarosabu.dev/blog/creating-a-grass-field-with-tsl/) informed instancing and segmented blade construction. Their code, texture maps and assets are not bundled. The geometry and shader here are original.
+
+## Anybody typeface
+Anybody by Etcetera Type Company, bundled unmodified under the SIL Open Font License 1.1. Source: https://github.com/Etcetera-Type-Co/Anybody . License: `public/fonts/Anybody-OFL.txt`. Used for interface typography.

@@ -6,9 +6,16 @@ const layer = button.querySelector('.wordmark-letters');
 const status = document.querySelector('#title-status');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const effects = ['rotate', 'squeeze', 'wave', 'weight', 'colour', 'fade', 'rotate', 'weight', 'wave', 'squeeze'];
-const letters = [...measure.textContent].map((character, index) => {
+const characters = [...measure.textContent];
+measure.replaceChildren(...characters.map((character, index) => {
+  const glyph = document.createElement('span');
+  glyph.textContent = character;
+  glyph.className = index === 0 || index === 4 ? 'wordmark-initial' : 'wordmark-rest';
+  return glyph;
+}));
+const letters = characters.map((character, index) => {
   const slot = document.createElement('span');
-  slot.className = 'title-letter';
+  slot.className = `title-letter ${index === 0 || index === 4 ? 'wordmark-initial' : 'wordmark-rest'}`;
   slot.dataset.effect = effects[index];
   slot.textContent = character;
   layer.append(slot);
@@ -80,8 +87,7 @@ function fit(force = false) {
   const bounds = measure.getBoundingClientRect();
   const range = document.createRange();
   slots = letters.map((letter, index) => {
-    range.setStart(measure.firstChild, index);
-    range.setEnd(measure.firstChild, index + 1);
+    range.selectNodeContents(measure.children[index]);
     const rect = range.getBoundingClientRect();
     const left = rect.left - bounds.left;
     letter.style.left = `${left}px`;
@@ -134,7 +140,10 @@ function keyframes(effect, index) {
     });
   }
   if (effect === 'squeeze') return [{ transform: 'none' }, { transform: 'scaleX(.1)' }, { transform: 'none' }];
-  if (effect === 'weight') return [{ fontVariationSettings: '"wght" 700' }, { fontVariationSettings: '"wght" 400' }, { fontVariationSettings: '"wght" 700' }];
+  if (effect === 'weight') {
+    const weight = index === 0 || index === 4 ? 700 : 500;
+    return [{ fontWeight: weight }, { fontWeight: 350 }, { fontWeight: weight }];
+  }
   return [{ opacity: 1 }, { opacity: .25 }, { opacity: 1 }];
 }
 

@@ -1,0 +1,5 @@
+@font-face{font-family:Anybody;src:url('./fonts/Anybody-Variable.woff2') format('woff2');font-weight:100 900;font-stretch:50% 150%;font-display:swap}
+/* Brand typography. Code and fixed-cell artwork retain functional monospace. */
+html body,body :where(h1,h2,h3,h4,h5,h6,p,a,button,input,select,textarea,label,span,div,li,dt,dd,summary,small,strong,em,figcaption,th,td,svg text){font-family:Anybody,Arial,sans-serif!important}
+body :where(code,pre,kbd,samp),body :where(code,pre,kbd,samp) *{font-family:ui-monospace,SFMono-Regular,Consolas,monospace!important}
+body{font-weight:450}button,input,select,textarea{font-weight:500}h1,h2,h3{font-weight:750}em{font-style:normal}

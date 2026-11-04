@@ -27,3 +27,6 @@ Variable font filenames are simplified for the catalog; font contents are unchan
 ## Interaction inspiration
 
 The interactive title takes inspiration from [Jordan Egstad's portfolio](https://egstad.com/): individual letters select staggered typography effects and a page-color cycle. OpenCartel uses its own implementation, typography, palette and accessible controls. No source code or visual assets from that site are bundled.
+
+## Anybody typeface
+Anybody by Etcetera Type Company, bundled unmodified under the SIL Open Font License 1.1. Source: https://github.com/Etcetera-Type-Co/Anybody . License: `public/fonts/Anybody-OFL.txt`. Used for interface typography.
