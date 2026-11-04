@@ -4,7 +4,7 @@ Run `npm ci` and `npm run dev` with Node 22.18+. `npm run build` creates portabl
 
 ## Reusable component
 
-Import `mountChromaticLogo` from `src/chromatic-logo.js` and provide a square canvas with CSS dimensions. Pass `logoUrl`, a same-origin transparent image URL. The supplied SVG is the actual OpenCartel mark; the renderer uses its alpha, keeping the brand shape exact and painting it black. Other logo proportions require adjusting the `mask` mapping in the shader.
+Import `mountChromaticLogo` from `src/chromatic-logo.js` and provide a square canvas with CSS dimensions. Pass `logoUrl`, a same-origin transparent image URL. The supplied SVG is a demo logo; replace it with a transparent logo you have permission to use. The renderer uses its alpha, preserving the silhouette and painting it black. Other logo proportions require adjusting the `mask` mapping in the shader.
 
 ```js
 const effect = await mountChromaticLogo(canvas, {logoUrl, speed:1});
@@ -15,7 +15,7 @@ effect.seek(.4); // deterministic static state, stops playback
 effect.destroy();
 ```
 
-A smooth superelliptic glass surface grows from a sphere into a softened square. Its height gradients, including two local meniscus bulges, produce continuous normals; separate wavelength rays refract the actual logo texture. The same surface slope controls opposed dark studio reflections and narrow white caustics. Local violet/cyan glints gather at the moving light/dark reflection boundaries; a small damped recoil settles the lens after expansion. The supplied Oc silhouette is untouched and returns as thickness and reflection fade. This is a single-pass analytic optical approximation, not a multi-bounce physical simulation or a video texture.
+A smooth superelliptic glass surface grows from a sphere into a softened square. Its height gradients, including two local meniscus bulges, produce continuous normals; separate wavelength rays refract the actual logo texture. The same surface slope controls opposed dark studio reflections and narrow white caustics. Local violet/cyan glints gather at the moving light/dark reflection boundaries; a small damped recoil settles the lens after expansion. The logo silhouette is preserved and returns as thickness and reflection fade. This is a single-pass analytic optical approximation, not a multi-bounce physical simulation or a video texture.
 
 At 1×, playback runs at half the internal study clock: a growing orb appears around 0.3 seconds and stays round through 0.6; it unfolds into the accepted square lens by 0.8. Mark magnification recovers by 1.56 seconds, while the thinner meniscus continues relaxing through 2.08; fade ends at 2.64 and RAF stops after settling at 3 seconds. The early orb has a transient normal-driven white Fresnel reflection. The unfolding uses quintic smootherstep with zero velocity and acceleration at either end. `seek(seconds)` and the preview `time` parameter use the internal study clock, independently of playback speed. Device pixel ratio is capped at 2. ResizeObserver maintains sharpness. Hidden tabs do not advance the effect. Reduced motion shows the final state; explicit Replay plays once. Keyboard users can activate native replay/speed controls. No automatic infinite animation.
 

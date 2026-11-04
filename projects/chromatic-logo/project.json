@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "slug": "chromatic-logo",
   "title": "Chromatic Logo",
-  "description": "A glass orb unfolds into a refractive frame, then resolves to a mark.",
+  "description": "A glass logo reveal inspired by Apple Music.",
   "status": "ready",
   "technologies": [
     "JavaScript",
