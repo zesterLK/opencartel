@@ -1,0 +1,10 @@
+import './style.css';
+import {mountShell} from './shell.js';
+import {mountBlobLetter} from './blob-letter.js';
+const dispose = mountShell('blob-letter');
+const host = document.querySelector('#surface');
+host.setAttribute('aria-label', 'Fluid letter Z. Move to bend. Scroll down to spread ink and invert colours. Arrow keys push ink. Enter inverts.');
+const letter = mountBlobLetter(host, {onInvert: dark => document.body.classList.toggle('dark', dark)});
+document.querySelector('#theme').onclick = () => letter.invert();
+document.querySelector('#reset').onclick = () => letter.reset();
+import.meta.hot?.dispose(() => { letter.destroy(); dispose(); });

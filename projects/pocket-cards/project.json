@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "slug": "pocket-cards",
+  "title": "Pocket Cards",
+  "description": "A small wallet. Pick a card, take a closer look, and tuck it away.",
+  "status": "ready",
+  "technologies": [
+    "JavaScript",
+    "CSS",
+    "Vite"
+  ],
+  "codeLicense": "MIT",
+  "tags": [
+    "cards",
+    "interaction",
+    "component"
+  ],
+  "demo": null
+}

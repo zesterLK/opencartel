@@ -1,0 +1,9 @@
+Pocket Cards — third-party runtime notices
+
+The wallet uses original DOM, CSS and SVG; no third-party rendering library is required at runtime.
+
+Chakra Petch: Copyright Cadson Demak, SIL Open Font License 1.1. Full notice is included in fonts/ChakraPetch-OFL.txt.
+
+OpenCartel UI helpers are MIT licensed. Full project license is included in the source download.
+
+Reference: David (@david_visuals_), Credit card interaction, https://designeer.xyz/finds/david-visuals-2111096871506591835 . Reference media and logos are not distributed.

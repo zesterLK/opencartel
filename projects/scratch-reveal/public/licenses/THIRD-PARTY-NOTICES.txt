@@ -1,0 +1,4 @@
+Scratch Reveal — third-party runtime notices
+
+Chakra Petch by Cadson Demak is licensed under SIL Open Font License 1.1. The complete license is included in fonts/ChakraPetch-OFL.txt.
+No external runtime JavaScript libraries are bundled. Visual inspiration: Ayodele's Gift card scratch interaction; implementation and card artwork are original OpenCartel work.

@@ -1,0 +1,4 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {Coverage} from '../src/scratch.js';
+test('a fast pointer segment clears its entire path, not just endpoints',()=>{const c=new Coverage(100,24);c.stroke({x:0,y:50},{x:400,y:50},10,400,100);assert.ok(c.cells[12*100+50]);assert.equal(c.count,400); /* Four cell-center rows lie inside the 20px band. */});
+test('revisiting a mark does not inflate coverage',()=>{const c=new Coverage();const a={x:20,y:20},b={x:300,y:40};const first=c.stroke(a,b,15,400,70);assert.equal(c.stroke(a,b,15,400,70),first);});
+test('reset removes all marks and full panel strokes complete coverage',()=>{const c=new Coverage();c.stroke({x:0,y:35},{x:400,y:35},100,400,70);assert.equal(c.count/c.cells.length,1);c.clear();assert.equal(c.count,0);assert.equal(c.cells.reduce((a,b)=>a+b,0),0);});

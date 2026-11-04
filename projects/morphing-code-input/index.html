@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f6f4ef"><meta name="description" content="An expandable, tactile code input. Reusable and keyboard accessible."><title>Morphing Code Input — OpenCartel</title><link rel="icon" href="data:,"></head><body><header class="masthead oc-masthead">
+      <div class="masthead-brand">
+        <a id="origin-link" class="origin-link oc-button" aria-label="Home" title="Home" data-cursor-label="go home" hidden>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z" /></svg>
+        </a>
+        <h1 class="oc-pressed" title="Morphing Code Input">Morphing Code Input</h1>
+      </div>
+      <nav class="masthead-actions" aria-label="Project information">
+        <button id="info-button" class="oc-button" type="button" aria-haspopup="dialog" aria-controls="info-dialog" data-cursor-label="get help">Help</button>
+        <button id="guide-button" class="oc-button" type="button" aria-haspopup="dialog" aria-controls="guide-dialog" data-cursor-label="read guide">Guide</button>
+        <a id="source-download" class="oc-button" download="morphing-code-input-source.zip" data-cursor-label="download source" aria-label="Download source"><span class="oc-source-long">Download source</span><span class="oc-source-short" aria-hidden="true">Source</span></a>
+
+      </nav>
+    </header><main class="stage"><div id="code-demo"></div></main><footer><p>Enter six digits.</p><div class="footer-actions"><label class="demo-setting">Response <select id="response" class="oc-button"><option value="success">Accept</option><option value="error">Try again</option></select></label><button id="reset" class="oc-button">Reset</button></div></footer><dialog id="info-dialog" aria-labelledby="info-title"><div class="dialog-heading"><h2 id="info-title">A little room for your code.</h2><button id="close-info" class="oc-button">Close</button></div><p>Open the pill and enter any six digits. Paste a complete code, or type one digit at a time. Use Response to preview acceptance or a retry.</p><p>This is an interface demo. No code is sent or authenticated.</p><details id="third-party-notices"><summary>Third-party notices</summary><div id="notices-panel"></div></details></dialog><dialog id="guide-dialog" aria-labelledby="guide-title"><div class="dialog-heading"><h2 id="guide-title">Use this project</h2><button id="close-guide" class="oc-button">Close</button></div><div id="guide-panel"></div></dialog><script type="module" src="/src/main.js"></script></body></html>

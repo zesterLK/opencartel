@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "slug": "blob-letter",
+  "title": "Blob Letter",
+  "description": "A letter that moves like ink.",
+  "status": "ready",
+  "technologies": [
+    "JavaScript",
+    "WebGL",
+    "Vite"
+  ],
+  "codeLicense": "MIT",
+  "tags": [
+    "interactive",
+    "typography",
+    "webgl"
+  ],
+  "demo": null
+}

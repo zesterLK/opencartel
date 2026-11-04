@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "slug": "morphing-code-input",
+  "title": "Morphing Code Input",
+  "description": "A quiet pill unfolds into a tactile six-digit code input.",
+  "status": "ready",
+  "technologies": [
+    "JavaScript",
+    "CSS",
+    "Vite"
+  ],
+  "codeLicense": "MIT",
+  "tags": [
+    "input",
+    "forms",
+    "microinteraction"
+  ],
+  "demo": null
+}

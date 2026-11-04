@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "slug": "scratch-reveal",
+  "title": "Scratch Reveal",
+  "description": "A little anticipation. Scratch the silver to reveal your gift.",
+  "status": "ready",
+  "technologies": [
+    "JavaScript",
+    "Canvas",
+    "Vite"
+  ],
+  "codeLicense": "MIT",
+  "tags": [
+    "component",
+    "canvas",
+    "interaction"
+  ],
+  "demo": null
+}

@@ -1,0 +1,3 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {keyboardIndex,mountPocketCards} from '../src/pocket-cards.js';
+test('keyboard moves and wraps through arbitrary card count',()=>{assert.equal(keyboardIndex('ArrowLeft',0,3),2);assert.equal(keyboardIndex('ArrowDown',2,3),0);assert.equal(keyboardIndex('Home',2,3),0);assert.equal(keyboardIndex('End',0,5),4);assert.equal(keyboardIndex('Tab',0,3),null)});
+test('invalid component configuration fails before touching DOM',()=>{assert.throws(()=>mountPocketCards(null),TypeError);assert.throws(()=>mountPocketCards({}, {cards:[]}),TypeError);assert.throws(()=>mountPocketCards({}, {cards:Array(6).fill({})}),TypeError)});

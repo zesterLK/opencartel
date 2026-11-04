@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "slug": "ascii-sharks",
+  "title": "ASCII Sharks",
+  "description": "An ocean drawn one character at a time.",
+  "status": "ready",
+  "technologies": [
+    "JavaScript",
+    "Canvas",
+    "Vite"
+  ],
+  "codeLicense": "MIT",
+  "tags": [
+    "interactive",
+    "typography",
+    "canvas"
+  ],
+  "demo": null
+}
