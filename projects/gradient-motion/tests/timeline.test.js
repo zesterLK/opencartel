@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {phaseTime,LOOP_SECONDS,PHASES} from '../src/gradient.js';
+test('sequence repeats every 30 seconds without negative or invalid timestamps',()=>{assert.equal(LOOP_SECONDS,30);assert.equal(phaseTime(33),3);assert.equal(phaseTime(-10),0);assert.equal(phaseTime(NaN),0);});
+test('isolated phases stay inside their intended range throughout long playback',()=>{for(let t=0;t<1000;t+=.13){const m=phaseTime(t,'membrane');assert.ok(m>=0&&m<=13);assert.ok(phaseTime(t,'ember')>=13.3&&phaseTime(t,'ember')<=14.3);assert.ok(phaseTime(t,'field')>=17.25&&phaseTime(t,'field')<=18.75);assert.ok(phaseTime(t,'orbit')>=24&&phaseTime(t,'orbit')<28.5);}});
+test('all controls map to supported phases',()=>{assert.deepEqual(PHASES,['sequence','membrane','ember','field','orbit']);});

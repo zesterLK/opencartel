@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {countAt,timeDigits,envelope} from '../src/clock-math.js';import {readFileSync} from 'node:fs';
+test('reference sequence wraps without changing early',()=>{assert.equal(countAt(0),'1');assert.equal(countAt(.999),'1');assert.equal(countAt(9),'0');assert.equal(countAt(10),'1');});
+test('local clock pads all six digits',()=>assert.equal(timeDigits(new Date(2026,0,1,3,4,5)),'030405'));
+test('coil envelope starts clean and increases without overshoot',()=>{let old=0;for(let i=0;i<=100;i++){const e=envelope(i/100);assert.ok(e>=old&&e<=1);old=e;}assert.equal(envelope(0),0);});
+test('all ten contour assets have finite geometry and enough points',()=>{const data=JSON.parse(readFileSync(new URL('../src/contours.json',import.meta.url)));for(const d of '0123456789'){assert.ok(data[d].contours.length);for(const c of data[d].contours){assert.ok(c.length>=160);assert.ok(c.every(p=>p.length===2&&p.every(Number.isFinite)));}}});

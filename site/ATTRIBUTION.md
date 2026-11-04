@@ -30,3 +30,7 @@ The interactive title takes inspiration from [Jordan Egstad's portfolio](https:/
 
 ## Anybody typeface
 Anybody by Etcetera Type Company, bundled unmodified under the SIL Open Font License 1.1. Source: https://github.com/Etcetera-Type-Co/Anybody . License: `public/fonts/Anybody-OFL.txt`. Used for interface typography.
+
+## Motion studies previews
+
+`public/previews/chromatic-logo.webm`, `jitter-clock.webm`, `gradient-motion.webm` and their PNG posters are original silent renders of the included project renderers, produced on 4–5 November 2026. Remotion drives the actual Canvas/WebGL code at deterministic timestamps, without interface controls. The 800 × 500 previews run at 30 fps (6, 20 and 30 seconds respectively); this encoding rate is not a runtime performance measurement. No reference footage is redistributed. The Oc mark is user-supplied OpenCartel artwork. Jitter Clock's derived Archivo Black contours retain the project's OFL notices. See each project’s attribution for visual inspiration and implementation details.

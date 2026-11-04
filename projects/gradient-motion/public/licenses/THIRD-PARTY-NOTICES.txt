@@ -1,0 +1,3 @@
+Gradient Motion — third-party runtime notices
+
+Original WebGL and GLSL implementation; no runtime rendering dependency. OpenCartel interface helpers are MIT licensed. Anybody variable font is distributed under SIL Open Font License 1.1; see fonts/Anybody-OFL.txt. Reference media is not bundled.

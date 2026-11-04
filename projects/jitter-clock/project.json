@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "slug": "jitter-clock",
+  "title": "Jitter Clock",
+  "description": "A clean digit unwinds into a restless loop of ink.",
+  "status": "ready",
+  "technologies": [
+    "Canvas 2D",
+    "JavaScript",
+    "Vite"
+  ],
+  "codeLicense": "MIT",
+  "tags": [
+    "clock",
+    "generative",
+    "typography"
+  ],
+  "demo": null
+}

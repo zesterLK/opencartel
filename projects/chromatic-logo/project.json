@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "slug": "chromatic-logo",
+  "title": "Chromatic Logo",
+  "description": "A glass orb unfolds into a refractive frame, then resolves to a mark.",
+  "status": "ready",
+  "technologies": [
+    "JavaScript",
+    "WebGL",
+    "GLSL",
+    "Vite"
+  ],
+  "codeLicense": "MIT",
+  "tags": [
+    "logo",
+    "shader",
+    "reveal"
+  ],
+  "demo": null
+}

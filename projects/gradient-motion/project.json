@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "slug": "gradient-motion",
+  "title": "Gradient Motion",
+  "description": "A luminous membrane transforms into an ember, a flowing colour field and an orbit of light.",
+  "status": "ready",
+  "tags": [
+    "shader",
+    "gradient",
+    "motion",
+    "webgl"
+  ],
+  "technologies": [
+    "JavaScript",
+    "WebGL",
+    "GLSL"
+  ],
+  "codeLicense": "MIT",
+  "demo": null
+}

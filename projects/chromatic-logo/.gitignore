@@ -1,0 +1,4 @@
+node_modules/
+dist/
+public/*-source.zip
+public/integrate.md
