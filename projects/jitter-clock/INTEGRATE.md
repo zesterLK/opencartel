@@ -7,6 +7,8 @@ Use Node.js 22.12+ and npm. Run `npm ci`, `npm run dev`, `npm test`, and `npm ru
 ## Source map
 
 - `src/clock.js`: Canvas renderer, coherent coil deformation, visibility, resizing and reduced-motion handling.
+- `src/coil-geometry.js`: strand paths, glyph boundaries and cached deformation stages.
+- `src/stroke-worker.js` and `src/stroke-playback.js`: background preparation and caching for live playback. The demo passes a module worker as the optional `worker` argument to `mountClock`. A standalone renderer without this option computes the same paths synchronously.
 - `src/clock-math.js`: count cycle, local-time formatting and disturbance envelope.
 - `src/contours.json`: cached evenly sampled Archivo Black digit outlines.
 - `scripts/build-contours.mjs`: reproducible outline extraction from the unchanged bundled font.
@@ -16,11 +18,11 @@ Use Node.js 22.12+ and npm. Run `npm ci`, `npm run dev`, `npm test`, and `npm ru
 
 ## Reuse contract
 
-Import `mountClock` and pass a canvas. An optional second argument `{caption:false}` removes the small art caption for clean recordings. `?preview=1&t=0.5` hides page controls and freezes Count at a deterministic elapsed time for review. It returns `draw(seconds)`, `setPaused(value)`, `setMode(value)`, `setSpeed(value)`, `reset()` and `destroy()`. Call destroy on unmount. Pause before using draw for deterministic Count snapshots. Count uses elapsed animation seconds; Time uses the system date. The current renderer owns viewport dimensions; for a contained integration replace its resize function with a ResizeObserver scoped to the parent. No framework is required.
+Import `mountClock` and pass a canvas. `?preview=1&t=0.5` hides page controls and freezes Count at a deterministic elapsed time for review. It returns `draw(seconds)`, `setPaused(value)`, `setMode(value)`, `setSpeed(value)`, `reset()` and `destroy()`. Call destroy on unmount. Pause before using draw for deterministic Count snapshots. Count uses elapsed animation seconds; Time uses the system date. The current renderer owns viewport dimensions; for a contained integration replace its resize function with a ResizeObserver scoped to the parent. No framework is required.
 
 ## Preserve the identity
 
-Keep a sparse near-black stage, one centered digit by default, thin pale strokes, central guide lines and coherent looping deformation. The line starts clean and coils over each second. Do not replace the loops with independent random per-frame points: that produces flicker and changes the character. Theme, amplitude, coil count and digit size are explicit constants in the renderer. Preserve keyboard controls, visibility suspension and reduced-motion handling.
+Keep a sparse near-black stage, one centered digit by default, thin pale strokes, central guide lines and coherent looping deformation. Each count lasts two seconds at 1×. Folds expand early in the beat and settle. The second pass through the ten digits adds longer, overlapping loops. Do not replace the loops with independent random per-frame points: that produces flicker and changes the character. Adjust strand displacement in `src/coil-geometry.js` and display size in `src/clock.js`. Preserve keyboard controls, visibility suspension and reduced-motion handling.
 
 ## Agent brief
 

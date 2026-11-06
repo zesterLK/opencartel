@@ -2,11 +2,11 @@
 
 ## Visual inspiration
 
-The outlined digit-to-coils rhythm is inspired by [@kitasenjudesign](https://x.com/kitasenjudesign/status/2114683411260694530), discovered through [MagpUI](https://magpui.com/en/i/hand-drawn-jittery-line-clock-bc2a82). This is an independently authored Canvas reconstruction. No original video, image or source code is included. The renderer uses a custom analytic coil deformation; it does not claim to reproduce the original algorithm.
+The outlined digit-to-coils rhythm is inspired by [@kitasenjudesign](https://x.com/kitasenjudesign/status/2114683411260694530), discovered through [MagpUI](https://magpui.com/en/i/hand-drawn-jittery-line-clock-bc2a82). This is an independently authored Canvas reconstruction. No original video, image or source code is included. The renderer uses a custom procedural strand deformation; it does not claim to reproduce the original algorithm.
 
 ## Archivo Black
 
-Omnibus-Type's unchanged `public/fonts/ArchivoBlack-Regular.ttf` comes from [Google Fonts](https://github.com/google/fonts/tree/main/ofl/archivoblack). `public/fonts/ArchivoBlack-OFL.txt` contains the copyright and SIL Open Font License 1.1. `src/contours.json` contains adjusted geometry extracted from its digits (with an independently drawn, curved-flag numeral one) using `scripts/build-contours.mjs`, and remains covered by that font license. Redistribution is allowed with the notices retained; the font is not sold by itself.
+Omnibus-Type's unchanged `public/fonts/ArchivoBlack-Regular.ttf` comes from [Google Fonts](https://github.com/google/fonts/tree/main/ofl/archivoblack). `public/fonts/ArchivoBlack-OFL.txt` contains the copyright and SIL Open Font License 1.1. `src/contours.json` contains adjusted geometry extracted from its digits (with independently drawn numerals one and four) using `scripts/build-contours.mjs`, and remains covered by that font license. Redistribution is allowed with the notices retained; the font is not sold by itself.
 
 ## Anybody
 

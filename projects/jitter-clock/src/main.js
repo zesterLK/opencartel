@@ -2,7 +2,13 @@ import './style.css';import './ui.css';import './cursor.css';import './motion.cs
 import {mountClock} from './clock.js';import {mountCursor} from './cursor.js';import {mountPageMotion,openDialog,closeDialog} from './motion.js';import {mountMarkdownPanel} from './markdown-panel.js';
 const $=s=>document.querySelector(s),abort=new AbortController(),{signal}=abort;
 if(new URLSearchParams(location.search).has('preview'))document.body.classList.add('preview');
-let clock;try{clock=mountClock($('#clock'),{caption:!document.body.classList.contains('preview')});$('#load-status').hidden=true;}catch{$('#load-status').textContent='This browser could not draw the clock. Try reloading.';}
+const preview = document.body.classList.contains('preview');
+let worker;
+if (!preview && typeof Worker === 'function') {
+  try { worker = new Worker(new URL('./stroke-worker.js', import.meta.url), {type: 'module'}); }
+  catch { /* Embedded hosts may restrict workers; use synchronous playback there. */ }
+}
+let clock;try{clock=mountClock($('#clock'),{worker});$('#load-status').hidden=true;}catch{$('#load-status').textContent='This browser could not draw the clock. Try reloading.';}
 let paused=false,speedIndex=1;const speeds=[.5,1,2];
 const previewTime=new URLSearchParams(location.search).get('t');if(document.body.classList.contains('preview')&&previewTime!==null&&Number.isFinite(Number(previewTime))){clock?.setPaused(true);clock?.draw(Number(previewTime));paused=true;}
 function pause(){paused=!paused;clock?.setPaused(paused);$('#pause').textContent=paused?'Play':'Pause';$('#pause').setAttribute('aria-pressed',String(paused));}
